@@ -335,11 +335,10 @@ return [
         ],
 
         ['header' => 'ADMINISTRADOR'],
-        
         [
             'text' => 'Tips',
             'route' => 'admin.tips.index',
-            'icon' => 'fas fa-fw fa-star-and-crescent',
+            'icon' => 'fab fa-fw fa-face-grin-stars',            
         ],
         [
             'text' => 'Productos',
