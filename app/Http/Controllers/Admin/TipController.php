@@ -9,10 +9,10 @@ use App\Models\Tip;
 class TipController extends Controller
 {
     public function __construct(){
-        $this->middleware('can:admin.tips.index')->only('index');
-        $this->middleware('can:admin.tips.create')->only('create', 'store');
-        $this->middleware('can:admin.tips.edit')->only('edit', 'update');
-        $this->middleware('can:admin.tips.destroy')->only('destroy');
+    $this->middleware('can:admin.tips.index')->only('index');
+    $this->middleware('can:admin.tips.create')->only('create', 'store');
+    $this->middleware('can:admin.tips.edit')->only('edit', 'update');
+    $this->middleware('can:admin.tips.destroy')->only('destroy');
     }
     
     public function index()
