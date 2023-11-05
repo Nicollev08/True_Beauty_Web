@@ -12,11 +12,9 @@ Route::get('', [HomeController::class, 'index'])->middleware('can:admin.home') -
 
 Route::resource('users', UserController::class)->names('admin.users');
 
+
 Route::resource('roles', RoleController::class)->names('admin.roles');
 
-Route::resource('products', ProductController:: class)->names('admin.products');
+Route::resource('products', ProductController:: class)->except('show')->names('admin.products');
 
-Route::resource('tips', TipController::class)->names('admin.tips');
-
-
-include __DIR__.'/api.php';
+Route::resource('tips', TipController::class)->except('show')->names('admin.tips');

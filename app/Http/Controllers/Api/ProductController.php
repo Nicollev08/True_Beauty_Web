@@ -11,70 +11,43 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return response()->json(compact('products'));
-    }
-
-    public function create()
-    {
-        return response()->json(compact('product'));
+        return response()->json($products);
     }
     
     public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'precio' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-    
-        $product = new Product($request->except('image'));
-    
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/product_images');
-            $product->image = 'product_images/' . basename($imagePath);
-        }
-    
-        $product->save();
-
-        return response()->json($product, 201);
-    }
+{
+    $product = Product::create($request->all());
+    return response()->json([
+        'producto' => $product,
+        'mensaje' => "Producto creado correctamente"
+    ]);
+}
 
     public function show(Product $product)
     {
-        return response()->json(compact('products'));
-    }
-
-    public function edit(Product $product)
-    {
-        return response()->json(compact('product'));
+        return response()->json([
+            'respuesta'=>true,
+            'producto'=>$product
+        ]);
     }
 
     public function update(Request $request, Product $product)
     {
-        $request->validate([
-            'name' => 'required',
-            'precio' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-
-        $this->processImage($request, $product);
-
         $product->update($request->all());
-
-        return response()->json(compact('product'));
+        return response()->json([
+            'producto' => $product,
+            'mensaje' => "Producto actualizado correctamente"
+        ]);
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
-        return response()->json(['message' => 'Producto eliminado exitosamente.']);
+        return response()->json([
+            'respuesta'=> true,
+            'mensaje' => "Producto eliminado correctamente"
+        ],200);
     }
 
-    private function processImage(Request $request, Product $product)
-    {
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/product_images');
-            $product->image = 'product_images/' . basename($imagePath);
-        }
-    }
+
 }

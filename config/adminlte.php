@@ -335,18 +335,17 @@ return [
         ],
 
         ['header' => 'ADMINISTRADOR'],
-        
+       
         [
             'text' => 'Tips',
             'route' => 'admin.tips.index',
-            'icon' => 'fas fa-fw fa-star-and-crescent',
+            'icon' => 'fas fa-fw fa-star-and-crescent',            
         ],
         [
             'text' => 'Productos',
             'route'  => 'admin.products.index',
             'icon' => 'fas fa-fw fa-gift',
         ],
-        
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',
