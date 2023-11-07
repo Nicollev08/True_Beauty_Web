@@ -109,12 +109,17 @@ a{
     line-height: var(--h2-font-size);
     color: var(--white-color);
 }
+
+/* .hed{
+    color:#151515;
+} */
+
 .products{
 	font-size: 1.7rem;
 	font-family: 'Merriweather Sans', sans-serif;
 	background: var(--rosa-color);
 	color: #ececec;
-	padding: 6rem;
+	padding: 3rem;
 	
 }
 
@@ -131,7 +136,7 @@ a{
 	background: #ffffff;
 	color: #21201e;
 	text-align: center;
-	padding: 3rem 3rem;
+	padding: 3rem 4rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

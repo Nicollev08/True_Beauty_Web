@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\TipController;
+use App\Http\Controllers\Api\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,21 +22,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-// Route::apiResource('products', ProductController::class);
-
+// PRODUCTOS
 Route::get('/products', [ProductController::class, 'index']);
 Route::post('/products', [ProductController::class, 'store']);
-
-// Rutas para mostrar, actualizar y eliminar un producto específico
-Route::get('/products/{product}', [ProductController::class, 'show']);
 Route::put('/products/{product}', [ProductController::class, 'update']);
 Route::delete('/products/{product}', [ProductController::class, 'destroy']);
 
-Route::prefix('tips')->group(function () {
-    Route::get('/', [TipController::class, 'index']);
-    Route::get('/{tip}', [TipController::class, 'edit']);
-    Route::post('/', [TipController::class, 'store']);
-    Route::put('/{tip}', [TipController::class, 'update']);
-    Route::delete('/{tip}', [TipController::class, 'destroy']);
-});
+//TIPS
+Route::get('/tips', [TipController::class, 'index']);
+Route::post('/tips', [TipController::class, 'store']);
+Route::put('/tips/{tips}', [TipController::class, 'update']);
+Route::delete('/tips/{tips}', [TipController::class, 'destroy']);
+
+//USERS
+Route::get('/users', [UserController::class, 'index']);
+Route::post('/users', [UserController::class, 'store']);
+Route::put('/users/{users}', [UserController::class, 'update']);
+Route::delete('/users/{users}', [UserController::class, 'destroy']);
 

@@ -14,9 +14,14 @@
 
 </head>
 <body>
+
 	<section class="products">
+
+		@livewire('product-navigation')
 		
+
 		<div class="row">
+			
 			<div class="section__title2">
 				<h1>PRODUCTOS</h1>
 				<span></span>
