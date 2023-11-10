@@ -73,14 +73,7 @@ a{
 .section{
     padding: calc(var(--header-height) + 20px) 0;
 }
-.grid{
-    display: grid;
-}
-.flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 .section__title {
     margin: 0 auto;
     text-align: center;
@@ -110,13 +103,10 @@ a{
     color: var(--white-color);
 }
 
-/* .hed{
-    color:#151515;
-} */
+
 
 .products{
 	font-size: 1.7rem;
-	font-family: 'Merriweather Sans', sans-serif;
 	background: var(--rosa-color);
 	color: #ececec;
 	padding: 3rem;

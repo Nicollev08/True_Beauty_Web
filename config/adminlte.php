@@ -347,6 +347,11 @@ return [
             'icon' => 'fas fa-fw fa-gift',
         ],
         [
+            'text' => 'Categorías',
+            'route'  => 'admin.categories.index',
+            'icon' => 'fas fa-fw fa-tags',
+        ],
+        [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',

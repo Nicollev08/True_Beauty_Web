@@ -7,11 +7,13 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TipController;
+use App\Http\Controllers\Admin\CategoryController;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:admin.home') ->name('admin.home');
 
 Route::resource('users', UserController::class)->except('show')->names('admin.users');
 
+Route::resource('categories', CategoryController::class)->except('show')->names('admin.categories');
 
 Route::resource('roles', RoleController::class)->except('show')->names('admin.roles');
 
