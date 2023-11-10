@@ -12,6 +12,7 @@ class ProductController extends Controller
     {
         $products = Product::all();
         return response()->json($products);
+        //nicol
     }
     
     public function store(Request $request)
