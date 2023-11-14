@@ -11,19 +11,20 @@ class Subcategory extends Model
 
     protected $fillable = [
         'name',
-        'slug',
-        'image',
-        'color',
         'category_id'
     ];
+
+    
+
+    //RELACIÓN UNO A MUCHOS INVERSA
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 
     //RELACION UNO A MUCHOS
     public function products(){
         return $this->hasMany(Product::class);
     }
 
-    //RELACIÓN UNO A MUCHOS INVERSA
-    public function category(){
-        return $this->belongsTo(Category::class);
-    }
+    
 }

@@ -15,26 +15,26 @@ class ColorProductSeeder extends Seeder
      */
     public function run(): void
     {
-        $products = Product::whereHas('subcategory', function(Builder $query){
-            $query->where('color', true);
-        })->get();
+    //     $products = Product::whereHas('subcategory', function(Builder $query){
+    //         $query->where('color', true);
+    //     })->get();
 
-        foreach($products as $product){
-            $product->colors()->attach([
-                1 => [
-                    'quantity' => 10
-                ],
-                2 => [
-                    'quantity' => 10
-                ],
-                3 => [
-                    'quantity' => 10
-                ],
-                4 => [
-                    'quantity' => 10
-                ]
-            ]);
-        }
+    //     foreach($products as $product){
+    //         $product->colors()->attach([
+    //             1 => [
+    //                 'quantity' => 10
+    //             ],
+    //             2 => [
+    //                 'quantity' => 10
+    //             ],
+    //             3 => [
+    //                 'quantity' => 10
+    //             ],
+    //             4 => [
+    //                 'quantity' => 10
+    //             ]
+    //         ]);
+    //     }
     }
 
 }

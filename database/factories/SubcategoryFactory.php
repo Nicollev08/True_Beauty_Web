@@ -14,10 +14,10 @@ class SubcategoryFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
-        return [
-            'image' => 'subcategories_images/'. $this->faker->image('public/storage/subcategories_images', 640, 480, null, false)
-        ];
+        // return [
+        //     'image' => 'subcategories_images/'. $this->faker->image('public/storage/subcategories_images', 640, 480, null, false)
+        // ];
     }
 }

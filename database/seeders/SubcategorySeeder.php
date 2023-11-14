@@ -18,59 +18,49 @@ class SubcategorySeeder extends Seeder
             //Cabello
             [
                 'category_id' => 1,
-                'name' => "Reparación",
-                'slug' => Str::slug('Cabello-peinados'),
-                'color' => true
+                'name' => "Reparación"
             ],
             [
                 'category_id' => 1,
-                'name' => "Brillo",
-                'slug' => Str::slug('Cabello-Brillo'),
+                'name' => "Brillo"
             ],
             [
                 'category_id' => 1,
-                'name' => "Suavidad",
-                'slug' => Str::slug('Cabello-Suavidad'),
+                'name' => "Suavidad"
             ],
 
             //PEPSTAÑAS
             [
                 'category_id' => 2,
-                'name' => "Punto a punto",
-                'slug' => Str::slug('Pestañas Punto a punto'),
+                'name' => "Punto a punto"
             ],
             [
                 'category_id' => 2,
-                'name' => "Enteras",
-                'slug' => Str::slug('Pestañas enteras'),
+                'name' => "Enteras"
             ],
             //CUERPO
             [
                 'category_id' => 3,
-                'name' => "Hidratación",
-                'slug' => Str::slug('Cuerpo hidratacion'),
+                'name' => "Hidratación"
             ],
             [
                 'category_id' => 3,
-                'name' => "Exfoleante",
-                'slug' => Str::slug('Cuerpo exfoleantes'),
+                'name' => "Exfoleante"
             ],
             //UÑAS
             [
                 'category_id' => 4,
-                'name' => "Postizas",
-                'slug' => Str::slug('Uñas postizas'),
+                'name' => "Postizas"
             ],
             [
                 'category_id' => 4,
-                'name' => "Esmaltes",
-                'slug' => Str::slug('Esmaltes'),
+                'name' => "Esmaltes"
             ],
             
         ];
 
         foreach($subcategories as $subcategory){
-            SubCategory::factory(1)->create($subcategory);
+            SubCategory::create($subcategory);
         }
     }
 }

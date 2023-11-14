@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url('assets/css/menu.css') }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
     <title>MENU</title>
 </head>
@@ -21,15 +22,42 @@
 
         <nav class="navbar navbar-default">
 
-            <a style="text-decoration:none" href="#">Inicio</a>
-            <a style="text-decoration:none" href="#tips">Tips</a>
-            <a style="text-decoration:none" href="#about">¿Quiénes somos?</a>
-            <a style="text-decoration:none" href="#servicios">Servicios</a>
-            <a style="text-decoration:none" href="#">Productos</a>
-            <a style="text-decoration:none" href="#redes">Redes</a>
+            <a class="names" style="text-decoration:none" href="#">Inicio</a>
+            <a class="names" style="text-decoration:none" href="#tips">Tips</a>
+            <a class="names" style="text-decoration:none" href="#about">¿Quiénes somos?</a>
+            <a class="names" style="text-decoration:none" href="#servicios">Servicios</a>
+            <a class="names" style="text-decoration:none" href="#">Productos</a>
+            <a class="names" style="text-decoration:none" href="#redes">Redes</a>
+            
+            @guest
+                <div class="ml-3 relative">
+                    <x-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            <i class="fa-regular fa-circle-user cursor-pointer w-6 text-4xl"></i>
+                        </x-slot>
+
+                        <x-slot name="content">
+                            <x-dropdown-link href="{{ route('login') }}">
+                                {{ __('Iniciar sesión') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link href="{{ route('register') }}">
+                                {{ __('Registrarse') }}
+                            </x-dropdown-link>
+                        </x-slot>
+
+                    </x-dropdown>
+                </div>
+
+            @endguest
+
+            <a href="#"><i class="fa-solid fa-cart-shopping" style="color: #fcfcfd;"></i></a>
 
 
         </nav>
+
+
+
 
         @auth
 
@@ -68,7 +96,7 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
-                        
+
                         @can('admin.home')
                             <x-dropdown-link href="{{ route('admin.home') }}">
                                 {{ __('Dashboard') }}
@@ -96,24 +124,11 @@
                     </x-slot>
                 </x-dropdown>
             </div>
-        @else
-            <x-dropdown align="right" width="48">
-                <x-slot name="trigger">
-                    <i class="fa-regular fa-circle-user"></i>
-                </x-slot>
-
-                <x-slot name="content">
-                </x-slot>
-            </x-dropdown>
 
         @endauth
 
 
-
     </header>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
 
     @yield('content')
 </body>

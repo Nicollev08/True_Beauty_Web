@@ -21,10 +21,10 @@ class CategoryFactory extends Factory
     protected $model = Category::class;
 
     
-    public function definition(): array
+    public function definition()
     {
-        return [
-            'image' => 'categories_images/'. $this->faker->image('public/storage/categories_images', 640, 480, null, false)
-        ];
+        // return [
+        //     'image' => 'categories_images/'. $this->faker->image('public/storage/categories_images', 640, 480, null, false)
+        // ];
     }
 }

@@ -21,26 +21,36 @@ class ProductFactory extends Factory
 
     public function definition(): array
     {
+        $sku = $this->faker->unique()->bothify('?##?##?');
         $name = $this->faker->sentence(2);
         $subcategory = Subcategory::all()->random();
         $category = $subcategory->category;
-        $brand = $category->brands->random();
+        //$brand = $category->brands->random();
 
-        if($subcategory->color){
-            $quantity = null;
-        }else{
-            $quantity = 15;
-        }
+        // if($subcategory->color){
+        //     $quantity = null;
+        // }else{
+        //     $quantity = 15;
+        // }
 
         return [
+            'sku' => $sku,
             'name' => $name,
-            'slug' => Str::slug($name),
+            ///'slug' => Str::slug($name),
             'description' => $this->faker->text(),
+
+            'image_path' => 'products_images/'. $this->faker->image('public/storage/products_images', 640, 480, null, false),
+            
             'price' => $this->faker->randomElement([19.99, 49.99, 99.99]),
-            'status' => 2,
+            //'status' => 2,
             'subcategory_id'=> $subcategory->id,
-            'brand_id'=> $brand->id,
-            'quantity' => $quantity
+            //'brand_id'=> $brand->id,
+            //'quantity' => $quantity
+            
         ];
+
+    
+            
+        
     }
 }

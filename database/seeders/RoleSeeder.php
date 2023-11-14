@@ -61,5 +61,36 @@ class RoleSeeder extends Seeder
                             'description' => 'Editar tips'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'admin.tips.destroy',
                             'description' => 'Eliminar tips'])->syncRoles([$role1, $role2]);
+
+
+
+        Permission::create(['name' => 'admin.categories.index',
+                            'description' => 'Ver listado de categorías'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.categories.create',
+                            'description' => 'Agregar categorías'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.categories.edit',
+                            'description' => 'Editar categorías'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.categories.destroy',
+                            'description' => 'Eliminar categorías'])->syncRoles([$role1, $role2]);
+
+
+        Permission::create(['name' => 'admin.subcategories.index',
+                            'description' => 'Ver listado de subcategorías'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.subcategories.create',
+                            'description' => 'Agregar subcategorías'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.subcategories.edit',
+                            'description' => 'Editar subcategorías'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.subcategories.destroy',
+                            'description' => 'Eliminar subcategorías'])->syncRoles([$role1, $role2]);
+
+
+        Permission::create(['name' => 'admin.options.index',
+                            'description' => 'Ver listado de opciones'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.options.create',
+                            'description' => 'Agregar opciones'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.options.edit',
+                            'description' => 'Editar opciones'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.options.destroy',
+                            'description' => 'Eliminar opciones'])->syncRoles([$role1, $role2]);
     }
 }

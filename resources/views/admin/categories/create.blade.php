@@ -7,13 +7,22 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-@stop
+    <div class="card">
+        <div class="card-body">
+            <form method="POST" action="{{ route('admin.categories.store') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="name" id="name"
+                        placeholder="Nombre de la categoría">
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
+                    @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
 
-@section('js')
-    <script> console.log('Hi!'); </script>
+                </div>
+                <button type="submit" class="btn btn-primary">Crear categoría</button>
+            </form>
+        </div>
+    </div>
 @stop

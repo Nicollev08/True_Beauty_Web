@@ -7,13 +7,30 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-@stop
+    <div class="card">
+        <div class="card-body">
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
+            <form method="POST" action="{{ route('admin.categories.update', $category->id) }}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="name" id="name" value="{{ $category->name }}"
+                        placeholder="Nombre del producto">
 
-@section('js')
-    <script> console.log('Hi!'); </script>
+                    @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+
+                </div>
+
+                <button class="btn btn-blue">Actualizar</button>
+            </form>
+
+
+        </div>
+
+    </div>
+
+    @livewire('admin.subcategories.subcategory-admin', ['category' => $category])
 @stop

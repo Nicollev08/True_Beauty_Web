@@ -344,12 +344,22 @@ return [
         [
             'text' => 'Productos',
             'route'  => 'admin.products.index',
-            'icon' => 'fas fa-fw fa-gift',
+            'icon' => 'fas fa-fw fa-spray-can',
         ],
         [
             'text' => 'Categorías',
             'route'  => 'admin.categories.index',
             'icon' => 'fas fa-fw fa-tags',
+        ],
+        [
+            'text' => 'Subcategorías',
+            'route'  => 'admin.subcategories.index',
+            'icon' => 'fas fa-fw fa-tags',
+        ],
+        [
+            'text' => 'Opciones',
+            'route'  => 'admin.options.index',
+            'icon' => 'fas fa-fw fa-pen',
         ],
         [
             'text' => 'change_password',

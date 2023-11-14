@@ -14,26 +14,20 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+
+            $table->string('sku');
             $table->string('name');
-            $table->string('slug');
-
-            $table->text('description');
-
+            $table->string('description');
+            $table->string('image_path');
             $table->float('price');
 
-            $table->unsignedBigInteger('subcategory_id');
-            $table->foreign('subcategory_id')->references('id')->on('subcategories');
-            
-            $table->unsignedBigInteger('brand_id');
-            $table->foreign('brand_id')->references('id')->on('brands');
-
-            $table->integer('quantity')->nullable();
-
-            $table-> enum('status', [Product::BORRADOR, Product::PUBLICADO])->default(Product::BORRADOR);
-
+            $table->foreignId('subcategory_id')
+                ->constrained()
+                ->onDelete('cascade');
 
             $table->timestamps();
         });
+
     }
 
     /**
