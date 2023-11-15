@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\TipController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OptionController;
 use App\Http\Controllers\Admin\SubcategoryController;
+use App\Http\Controllers\Admin\ProfileController;
 
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:admin.home') ->name('admin.home');
@@ -27,3 +28,9 @@ Route::resource('roles', RoleController::class)->except('show')->names('admin.ro
 Route::resource('products', ProductController:: class)->except('show')->names('admin.products');
 
 Route::resource('tips', TipController::class)->except('show')->names('admin.tips');
+
+
+Route::middleware(['auth'])->group(function () {
+    
+    Route::resource('user', ProfileController::class)->except('index');
+});

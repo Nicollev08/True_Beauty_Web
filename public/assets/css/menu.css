@@ -59,6 +59,7 @@ a{
 .header .navbar {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .header .navbar .names {
@@ -72,6 +73,8 @@ a{
     font-size: 2rem; 
     margin-left: 80px; 
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Estilo específico para el icono del carrito de compras */
@@ -81,6 +84,7 @@ a{
     margin-left: 10px; 
     cursor: pointer; 
     padding: 0 40px;
+    
 }
 
 

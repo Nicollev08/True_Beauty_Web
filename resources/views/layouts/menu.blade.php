@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url('assets/css/menu.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <title>MENU</title>
 </head>
@@ -28,7 +29,7 @@
             <a class="names" style="text-decoration:none" href="#servicios">Servicios</a>
             <a class="names" style="text-decoration:none" href="#">Productos</a>
             <a class="names" style="text-decoration:none" href="#redes">Redes</a>
-            
+
             @guest
                 <div class="ml-3 relative">
                     <x-dropdown align="right" width="48">
@@ -51,12 +52,10 @@
 
             @endguest
 
-            <a href="#"><i class="fa-solid fa-cart-shopping" style="color: #fcfcfd;"></i></a>
+            <a href="#" title="carrito"><i class="fa-solid fa-cart-shopping" style="color: #fcfcfd;"></i></a>
 
 
         </nav>
-
-
 
 
         @auth
@@ -67,8 +66,14 @@
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                             <button
                                 class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
-                                    alt="{{ Auth::user()->name }}" />
+                                @if (Auth::user()->profile_photo_path)
+                                    <img class="h-12 w-12 rounded-full object-cover"
+                                        src="/storage/{{ Auth::user()->profile_photo_path }}"
+                                        alt="{{ Auth::user()->name }}" />
+                                @else
+                                    <img class="h-8 w-8 rounded-full object-cover"
+                                        src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                @endif
                             </button>
                         @else
                             <span class="inline-flex rounded-md">
@@ -105,11 +110,11 @@
 
 
 
-                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                        {{-- {{-- @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                             <x-dropdown-link href="{{ route('api-tokens.index') }}">
                                 {{ __('API Tokens') }}
                             </x-dropdown-link>
-                        @endif
+                        @endif --} --}}
 
                         <div class="border-t border-gray-200"></div>
 

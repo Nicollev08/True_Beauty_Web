@@ -12,8 +12,18 @@ class Category extends Model
         'name',
     ];
 
+
+    
+
     //RELACIÓN UNO A MUCHOS
     public function subcategories(){
         return $this->hasMany(Subcategory::class);
+    }
+
+
+
+//coders
+    public function products(){
+        return $this->hasManyThrough(Product::class, Subcategory::class);
     }
 }
