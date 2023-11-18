@@ -1,3 +1,2 @@
-<a href="/">
-    <img width="200px" src="/IMG/logo.png" alt="">
-</a>
+<img width="200px" src="/IMG/logo.png" alt="">
+

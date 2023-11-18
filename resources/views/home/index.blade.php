@@ -12,17 +12,25 @@
 
      <link rel="shortcut icon" href="/IMG/logo.png" type="image/x-icon">
      <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-
-
-     <link rel="stylesheet" href="{{ url('assets/css/lightslider.css') }}" />
-     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-     <script src="JS/lightslider.js"></script>
-     <script src="JS/index.js"></script>
      
 
-     <link rel="stylesheet" href="{{ url('assets/css/index.css') }}"> 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+     
+
+     <script src="JS/index.js"></script>
+
+
+
+     <link rel="stylesheet" href="{{ url('assets/css/index.css') }}">
      <link rel="stylesheet" href="{{ url('assets/css/products.css') }}">
 
+     @livewireStyles
 
  </head>
 
@@ -181,8 +189,7 @@
 
                      <section class="about__body" data-id="3">
                          <div class="about__texts">
-                             <h2 class="subtitle">Mi nombre es Alejandro Suárez, <span
-                                     class="about__course">estudiante
+                             <h2 class="subtitle">Mi nombre es Alejandro Suárez, <span class="about__course">estudiante
                                      de
                                      ADSO.</span></h2>
                              <p class="about__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut est
@@ -276,46 +283,23 @@
          </section>
 
 
+         <br>
+         <br>
+         <section id="products">
+             <div class="row">
+                 <div class="section__title2">
+                     <h1>PRODUCTOS</h1>
+                     <span>Todo lo mejor para tí</span>
+                 </div>
+             </div>
 
-         <!-- PRODUCTS SECTION -->
-         {{-- <x-productos/> --}}
+             @livewire('home.slider-products')
 
-         {{-- <section class="products">
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
-            <div class="row">
-    
-                <div class="section__title2">
-                    <h1>PRODUCTOS</h1>
-                    <span></span>
-                </div>
-            </div>
-            <br>
-            @livewire('product-navigation')
-            
-            <div class="productscontent">
-                <div class="all-products">
-                    @foreach ($products as $product)
-                        <div class="product">
-                            <img src="{{ asset('storage/' . $product->image_path) }}">
-                            <div class="product-info">
-                                <h4 class="product-title">{{ $product->name }}</h4>
-                                <p class="product-price">${{ $product->price }}</p>
-                                <a class="product-btn" href="#">Descripción</a>
-    
-                            </div>
-                        </div>
-                    @endforeach
-    
-    
-    
-                </div>
-                <a href="/productos"class="opbtn2">VER MÁS</a>
-            </div>
-    
-        </section> --}}
 
-        @livewire('home.category-products')
+         </section>
+         <br>
+         <br>
+
 
 
          <!-- TESTIMONIALS SECTION -->
@@ -413,6 +397,7 @@
          </section>
      </main>
 
+     <!--GOOGLE MAPS-->
      <section>
          <iframe class="map"
              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63778.38371264201!2d-76.64113390351599!3d2.4574700696484055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e300311c028d47d%3A0x880bd67f0987a54e!2zUG9wYXnDoW4sIENhdWNh!5e0!3m2!1ses!2sco!4v1694665767523!5m2!1ses!2sco"
@@ -452,6 +437,9 @@
          </div>
      </footer>
      <!-- JavaScript -->
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
      <script src="JS/index.js"></script>
 
      {{-- <script src="JS/products.js"></script>  --}}

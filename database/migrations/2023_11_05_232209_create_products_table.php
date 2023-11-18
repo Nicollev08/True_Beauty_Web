@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('image_path');
             $table->float('price');
+            $table->integer('quantity');
 
             $table->foreignId('subcategory_id')
                 ->constrained()

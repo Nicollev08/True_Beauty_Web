@@ -9,26 +9,26 @@ use Livewire\Component;
 
 class CategoryProducts extends Component
 {
-    // public $category;
-    // public $products = [];
+    public $category;
+    public $products;
 
-    // protected $listeners = ['glider'];
+    protected $listeners = ['categoryUpdated' => 'updateProducts'];
 
-    // public function mount()
-    // {
-    //     $this->loadPosts();
-    // }
+    public function mount($category)
+    {
+        $this->category = $category;
+        $this->updateProducts();
+    }
 
-    // // public function loadPosts()
-    // // {
-    // //     $this->products = $this->category->products()->take(15)->get();
-    // //     $this->dispatch('glider', $this->category->id);
-    // // }
+    public function updateProducts()
+    {
+        $this->products = $this->category->products; // Accede directamente a los productos de la categoría
+    }
+
 
     public function render()
     {
-        Category::all();
-        $products=Product::all();
-        return view('livewire.home.category-products', compact('products'));
+        $categories = Category::all();
+        return view('livewire.home.category-products', compact('categories'));
     }
 }

@@ -24,6 +24,7 @@
                             <th>DESCRIPCIÓN</th>
                             <th>IMAGEN</th>
                             <th>PRECIO</th>
+                            <th>STOCK</th>
                             <th>SUBCATEGORÍA</th>
                             <th colspan="2">ACCIONES</th>
                         </tr>
@@ -42,6 +43,7 @@
                                         style="max-width: 100px;">
                                 </td>
                                 <td>{{ $product->price }}</td>
+                                <td>{{ $product->quantity }}</td>
 
                                 <td>{{ $product->subcategory->name }}</td>
 

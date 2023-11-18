@@ -50,6 +50,16 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="quantity" class="form-label">Stock</label>
+                    <input type="text" class="form-control" name="quantity" id="quantity"
+                        placeholder="Stock del producto">
+
+                    @error('quantity')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
                     <label for="subcategory_id">Categoría</label>
                     <select name="subcategory_id" id="subcategory_id">
                         <option value="">Seleccione una categoría</option>

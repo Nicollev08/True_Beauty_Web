@@ -1,12 +1,18 @@
-$(document).ready(function() {
-    $('#lightSlider').lightSlider({
-        autoWidth:true,
-        loop:true,
-        onSliderLoad: function() {
-            $('#autoWidth').removeClass('cS-hidden');
-        } 
-    });  
-  });
+// $(document).ready(function(){
+//   $('#productslider').slick({
+//       infinite: true,
+//       slidesToShow: 5,
+//       slidesToScroll: 1,
+//       prevArrow: $('.slick-prev'), // Asocia el botón 'Anterior'
+//       nextArrow: $('.slick-next'), // Asocia el botón 'Siguiente'
+//   });
+
+//   // Muestra el carrusel una vez que esté configurado
+//   $('#productslider').removeClass('hidden');
+// });
+
+////////////////////////////////
+
 
   $(document).ready(function () {
     const sliders = $('.about__body');

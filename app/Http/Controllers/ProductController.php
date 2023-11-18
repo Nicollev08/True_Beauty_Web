@@ -13,9 +13,6 @@ class ProductController extends Controller
 {
     public function show(Product $product){
 
-        $subcategories = Subcategory::all();
-        $categories = Category::all();
-        $products = Product::all();
-        return view('products.show', compact('products'));
+        return view('products.show', compact('product'));
     }
 }

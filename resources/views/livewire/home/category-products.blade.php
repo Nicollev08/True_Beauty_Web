@@ -1,35 +1,48 @@
 <div>
-    <section class="slider">
+    <section>
+        <div class="carrusel">
+            @if ($products->count() > 0)
+                <div class="slider product-slider" id="product-slider{{ $category->id }}">
 
-        <ul id="lightSlider" class="cs-hidden">
-            @foreach ($products as $product)
-                <li class="item-a">
+                    @foreach ($products as $product)
+                        <div class="item">
+                            <div class="box">
+                                <div class="slider-img">
+                                    <img alt="1" src="{{ asset('storage/' . $product->image_path) }}">
+                                    <div class="overlyy">
+                                        <a href="{{ route('products.show', ['product' => $product->id]) }}" class="buy-btn">Comprar ahora</a>
 
-                    <div class="box">
-                        <div class="slide-img">
-                            <img alt="1" src="{{ asset('storage/' . $product->image_path) }}">
-
-                            <div class="overlay">
-
-                                <a href="#" class="buy-btn">Comprar ahora</a>
+                                    </div>
+                                </div>
+                                <div class="detail-box">
+                                    <div class="type">
+                                        <a href="{{ route('products.show', ['product' => $product->id]) }}">{{ $product->name }}</a>
+                                        <span>Disponible</span>
+                                    </div>
+                                    <a href="#" class="price">${{ $product->price }}</a>
+                                </div>
                             </div>
                         </div>
+                    @endforeach
+                </div>
+                <!-- Botones de desplazamiento -->
+                <button class="slick-prev" id="prevButton"><i class="fas fa-chevron-left"></i></button>
+                <button class="slick-next" id="nextButton"><i class="fas fa-chevron-right"></i></button>
+            @else
+                <p>No hay productos disponibles para la categoría {{ $category }}.</p>
+            @endif
+        </div>
 
-                        <div class="detail-box">
 
-                            <div class="type">
-                                <a href="#">{{ $product->name }}</a>
-                                <span>Noe Arrival</span>
-                            </div>
-
-                            <a href="#" class="price">${{ $product->price }}</a>
-
-                        </div>
-
-                    </div>
-                </li>
-            @endforeach
-        </ul>
-
+        <script>
+            $(document).ready(function() {
+                // Initialize the slider for each category
+                $('#product-slider{{ $category->id }}').slick({
+                    infinite: true,
+                    slidesToShow: 7,
+                    slidesToScroll: 1,
+                });
+            });
+        </script>
     </section>
 </div>

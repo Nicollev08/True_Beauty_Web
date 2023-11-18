@@ -8,14 +8,23 @@ use Livewire\Component;
 
 class SliderProducts extends Component
 {
+    public $category;
+
+    protected $listeners = ['categoryUpdated' => 'updateCategory'];
+
+    public function mount($category = null)
+    {
+        $this->category = $category ?? Category::first();
+    }
+
+    public function updateCategory()
+    {
+        $this->category->refresh();
+    }
+
     public function render()
     {
-        $categories = Category::all();
-        $products = Product::all();
-
-        return view('livewire.home.slider-products', [
-            'categories' => $categories,
-            'products' => $products,
-        ]);
+        $categories = Category::all(); // Asegúrate de obtener las categorías aquí
+        return view('livewire.home.slider-products', compact('categories'));
     }
 }

@@ -67,7 +67,7 @@ class User extends Authenticatable
 
     public function adminlte_image()
     {
-        return $this->profile_photo_url;
+        return $this->profile_photo_path;
     }
 
     public function adminlte_desc()

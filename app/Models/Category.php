@@ -13,17 +13,17 @@ class Category extends Model
     ];
 
 
-    
+
 
     //RELACIÓN UNO A MUCHOS
-    public function subcategories(){
+    public function subcategories()
+    {
         return $this->hasMany(Subcategory::class);
     }
 
-
-
-//coders
-    public function products(){
+    //Relacion con productos
+    public function products()
+    {
         return $this->hasManyThrough(Product::class, Subcategory::class);
     }
 }

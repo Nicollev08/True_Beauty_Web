@@ -1,13 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap');
 
+
+:root {
+    --header-height: 6.25rem;
+
+    /*---------------COLLORS -------------------*/
+    --rosa-color: #e4b2c6a9;
+    --cafe-color: #4f321f;
+    --amarillo-color: #dfd6a7;
+    --white-color: #ffffff;
+    --black-color: #151515;
+    --fuccia-color: rgb(219, 103, 149);
+
+    /*---------------FONT  AND TYPOGRAPHY-------------------*/
+    --font-cursive: 'Gelasio', cursive;
+    --body-font: 'Montserrat', sans-serif;
+   
+    --normal-font-size: 1rem;
+    --small-font-size: 0.813rem;
+}
 html{
     scroll-behavior: smooth;
 }
 
 body{
     background-color: var(--white-color);
-    font-size: var(--normal-font-size);
-    font-family: var(--body-font);
+   
     overflow-x: hidden;
 }
 ul{
@@ -36,6 +54,8 @@ a{
 /* NAV */
 .header{
     background: black;
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
     display: flex;
     align-items: center;
     justify-content: space-between;

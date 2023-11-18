@@ -25,6 +25,7 @@
                     <tr>
                         <th>ID</th>
                         <th>NOMBRE</th>
+                        <th>CATEGORÍA</th>
                         <th colspan="2">ACCIONES</th>
                     </tr>
                 </thead>
@@ -36,6 +37,7 @@
                             <tr>
                                 <td>{{ $subcategory->id }}</td>
                                 <td>{{ $subcategory->name }}</td>
+                                <td>{{ $subcategory->category->name }}</td>
                                 <td width="10px">
                                     <a class="btn btn-primary"
                                         href="{{ route('admin.subcategories.edit', $subcategory) }}">Editar</a>
