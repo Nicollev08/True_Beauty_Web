@@ -4,6 +4,7 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,13 @@ Route::middleware([
 });
 
 
-Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
+Route::get('products/{product}', [ProductController::class, 'show'])->middleware('admin.home')->name('products.show');
 
 Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+
+Route::get('/auth/{driver}/redirect', [AuthController::class, 'redirect']);
+ 
+Route::get('/auth/{driver}/callback', [AuthController::class, 'callback']);
 
 
 include __DIR__.'/api.php';

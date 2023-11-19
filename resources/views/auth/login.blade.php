@@ -28,6 +28,21 @@
                         autocomplete="current-password" />
                 </div>
 
+                <p class="text-center mt-4">-o-</p>
+                <div class="mt-4">
+                    <a href="{{ url('auth/facebook/redirect') }}"
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full block text-center">
+                        Iniciar sesión con facebook
+                    </a>
+                </div>
+    
+                <div class="mt-4">
+                    <a href="{{ url('auth/google/redirect') }}"
+                        class="bg-white hover:bg-gray-300 text-black font-bold py-2 px-4 rounded w-full block text-center">
+                        Iniciar sesión con google
+                    </a>
+                </div>
+
                 <div class="block mt-4">
                     <label for="remember_me" class="flex items-center">
                         <x-checkbox id="remember_me" name="remember" />

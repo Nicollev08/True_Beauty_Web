@@ -13,7 +13,7 @@ use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\ProfileController;
 
 
-Route::get('', [HomeController::class, 'index'])->middleware('can:admin.home') ->name('admin.home');
+Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
 Route::resource('users', UserController::class)->except('show')->names('admin.users');
 
