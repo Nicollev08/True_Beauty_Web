@@ -2,12 +2,14 @@
 
 @section('title', 'Dashboard')
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 @section('content_header')
 
     @can('admin.categories.create')
         <a class="btn btn-secondary float-right" href="{{ route('admin.categories.create') }}">Nueva categoría</a>
     @endcan
-    
+
     <h1>Lista de Categorías</h1>
 @stop
 
@@ -17,6 +19,12 @@
             <strong>{{ session('info') }}</strong>
         </div>
     @endif
+
+    {{-- GENERAR REPORTES --}}
+    <a href="{{ route('admin.categories.pdf') }}" class="btn btn-danger btn-lg" target="_blank" title="Ver Pdf"><i
+            class="fa-solid fa-file-pdf fa-lg" style="color: #ffffff;"></i></a>
+    <a href="{{ route('admin.categories.excel') }}" class="btn btn-success btn-lg" target="_blank" title="Ver Excel"><i
+            class="fa-solid fa-file-excel fa-lg" style="color: #ffffff;"></i></a>
 
     <div class="card">
 
@@ -52,9 +60,7 @@
                             </tr>
                         @endforeach
                     </tbody>
-
                 @else
-
                     <div class="alert alert-primary d-flex align-items-center" role="alert">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
@@ -74,5 +80,5 @@
         </div>
 
     </div>
-    
+
 @stop

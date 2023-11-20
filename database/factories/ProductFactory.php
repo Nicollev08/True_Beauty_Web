@@ -25,13 +25,6 @@ class ProductFactory extends Factory
         $name = $this->faker->sentence(2);
         $subcategory = Subcategory::all()->random();
         $category = $subcategory->category;
-        //$brand = $category->brands->random();
-
-        // if($subcategory->color){
-        //     $quantity = null;
-        // }else{
-        //     $quantity = 15;
-        // }
 
         return [
             'sku' => $sku,
@@ -49,9 +42,6 @@ class ProductFactory extends Factory
             //'quantity' => $quantity
             
         ];
-
-    
-            
-        
+  
     }
 }

@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\CategoriesExport;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+
+
+use Barryvdh\DomPDF\Facade\Pdf;
+use Dompdf\Dompdf;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CategoryController extends Controller
 {
@@ -12,6 +18,18 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         return view('admin.categories.index', compact('categories'));
+    }
+
+    public function pdf()
+    {
+        $categories = Category::all();
+        $pdf = Pdf::loadView('admin.categories.pdf', compact('categories'));
+        return $pdf->stream();
+    }
+
+    public function excel()
+    {
+       return Excel::download(new CategoriesExport, 'categories.xlsx');
     }
 
     public function create()

@@ -29,7 +29,7 @@
                 <button class="slick-prev" id="prevButton"><i class="fas fa-chevron-left"></i></button>
                 <button class="slick-next" id="nextButton"><i class="fas fa-chevron-right"></i></button>
             @else
-                <p>No hay productos disponibles para la categoría {{ $category }}.</p>
+                <p class="text-center">No hay productos disponibles para esta categoría {{ $category->name }}.</p>
             @endif
         </div>
 

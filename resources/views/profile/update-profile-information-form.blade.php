@@ -27,10 +27,10 @@
                 <!-- Current Profile Photo -->
                 <div class="mt-2 w-30 h-30" x-show="! photoPreview">
                     @if (Auth::user()->profile_photo_path)
-                        <img class="rounded-full object-cover" 
+                        <img class="rounded-full h-20 w-20 object-cover" 
                             src="/storage/{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}" />
                     @else
-                        <img class="h-30 w-30 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
+                        <img class="rounded-full h-20 w-20 object-cover" src="{{ Auth::user()->profile_photo_url }}"
                             alt="{{ Auth::user()->name }}" />
                     @endif
                 </div>

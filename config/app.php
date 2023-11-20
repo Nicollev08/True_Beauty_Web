@@ -171,8 +171,11 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+        
 
         Laravel\Socialite\SocialiteServiceProvider::class,
+        
     ])->toArray(),
 
     /*
