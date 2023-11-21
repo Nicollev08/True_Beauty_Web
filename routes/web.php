@@ -1,5 +1,7 @@
 <?php
-
+use App\Http\Controllers\EventoController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +31,33 @@ Route::middleware([
 });
 
 include __DIR__.'/api.php';
+
+
+
+Route::get('/', function () {
+    return view('evento.index');
+})->middleware("auth");
+
+Auth::routes();
+
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::resource('/eventos', EventoController::class)->only(['index', 'store']);
+
+    Route::post('/eventos/mostrar', [EventoController::class, 'show']);
+
+    Route::post('/eventos/edit/{id}', [EventoController::class, 'edit']);
+
+    Route::post('/eventos/update/{evento}', [EventoController::class, 'update']);
+
+    Route::post('/eventos/eliminar/{id}', [EventoController::class, 'destroy']);
+});
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

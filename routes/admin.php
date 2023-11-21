@@ -18,3 +18,5 @@ Route::resource('roles', RoleController::class)->except('show')->names('admin.ro
 Route::resource('products', ProductController:: class)->except('show')->names('admin.products');
 
 Route::resource('tips', TipController::class)->except('show')->names('admin.tips');
+
+
