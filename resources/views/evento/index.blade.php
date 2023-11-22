@@ -14,9 +14,11 @@
                 </div>
                 <div class="modal-body">
                     <form id="formEvento" action="">
-
+                        
                         {!! csrf_field() !!}
-
+                        <!--id user autenticado-->
+                        {{-- <input type="hidden" name="user_id" id="user_id" value="{{auth()->user()->id}}"> --}}
+                        
                         <div class="form-floating mb-3 d-none">
                             <input type="text" class="form-control" id="id" name="id"
                                 placeholder="Id del evento">

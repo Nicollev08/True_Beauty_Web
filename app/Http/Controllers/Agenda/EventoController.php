@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Agenda;
 use App\Models\Evento;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class EventoController extends Controller
 {
@@ -22,7 +23,7 @@ class EventoController extends Controller
     {
         //
     }
-
+ 
     /**
      * Store a newly created resource in storage.
      */

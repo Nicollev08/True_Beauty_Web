@@ -88,8 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
       const newURL = baseURL + url;
   
-      axios.post(newURL, datos).
-        then(
+      axios.post(newURL, datos).then(
           (respuesta) => {
             calendar.refetchEvents();
             $("#evento").modal("hide");

@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\EventoController;
+use App\Http\Controllers\Agenda\EventoController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -61,3 +61,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
