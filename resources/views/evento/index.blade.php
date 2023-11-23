@@ -11,6 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/locales-all.js"></script>
 
+<link rel="stylesheet" href="{{asset('css/button-modal.css')}}">
 
 <x-app-layout>
 @section('title', 'Agenda')
@@ -69,10 +70,10 @@
                 </div>
                 <div class="modal-footer">
 
-                    <button type="button" class="btn btn-success" id="btnGuardar">Guardar</button>
+                    <button type="button" class="btn btn-success text-dark" id="btnGuardar">Guardar</button>
                     <button type="button" class="btn btn-warning" id="btnModificar">Modificar</button>
-                    <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger text-dark" id="btnEliminar">Eliminar</button>
+                    <button type="button" class="btn btn-secondary text-dark" data-bs-dismiss="modal" id="close">Close</button>
 
                 </div>
             </div>
