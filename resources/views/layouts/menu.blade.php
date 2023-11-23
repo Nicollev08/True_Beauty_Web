@@ -26,6 +26,7 @@
             <a style="text-decoration:none" href="#servicios">Servicios</a>
             <a style="text-decoration:none" href="#">Productos</a>
             <a style="text-decoration:none" href="#redes">Redes</a>
+            <a style="text-decoration:none" href="eventos">Agenda</a>
             @guest
             <div class="dropdown">
                 <button class="dropbtn"><i class="fa-solid fa-user-plus" style="color: #fdfdfd;">Ingresa</i></button>
