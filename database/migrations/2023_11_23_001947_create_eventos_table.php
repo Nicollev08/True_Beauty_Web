@@ -22,6 +22,9 @@ return new class extends Migration
 
             $table->dateTime('end');
 
+            // Esta relacion que yo Andres hago es para ver quien hizo aquella cita o reserva
+            $table->foreignId('userId')->references('id')->on('users');
+
             $table->timestamps();
         });
     }

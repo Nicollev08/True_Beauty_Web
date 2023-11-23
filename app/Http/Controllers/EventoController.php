@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Evento;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventoController extends Controller
 {
@@ -22,7 +23,13 @@ class EventoController extends Controller
     public function store(Request $request)
     {
         request()->validate(Evento::$rules);
-        $evento = Evento::create($request->all());
+        Evento::create([
+            'title'       => $request->title,
+            'descripcion' => $request->descripcion,
+            'start'       => $request->start,
+            'end'         => $request->end,
+            'userId'      => Auth::user()->id
+        ]);
     }
 
     /**
@@ -58,7 +65,13 @@ class EventoController extends Controller
     public function update(Request $request, Evento $evento)
     {
         request()->validate(Evento::$rules);
-        $evento->update($request->all());
+        $evento->update([
+            'title'       => $request->title,
+            'descripcion' => $request->descripcion,
+            'start'       => $request->start,
+            'end'         => $request->end,
+            'userId'      => Auth::user()->id
+        ]);
         return response()->json($evento);
     }
 
