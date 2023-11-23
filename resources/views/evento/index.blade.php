@@ -13,6 +13,8 @@
 
 <link rel="stylesheet" href="{{asset('css/button-modal.css')}}">
 
+<link rel="shortcut icon" href="{{asset('IMG/calendar.png')}}" type="image/x-icon">
+
 <x-app-layout>
 @section('title', 'Agenda')
 
