@@ -40,7 +40,7 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
-        $evento = Evento::all();
+        $evento = Evento::where('userId', Auth::user()->id)->get();
         return response()->json($evento);
     }
 
