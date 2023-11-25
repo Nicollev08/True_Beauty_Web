@@ -12,6 +12,12 @@
                 placeholder="Ingrese el nombre del producto">
         </div>
 
+           {{-- GENERAR REPORTES --}}
+    <a href="{{ route('admin.products.pdf') }}" class="btn btn-danger btn-lg" target="_blank" title="Ver Pdf"><i
+            class="fa-solid fa-file-pdf fa-lg" style="color: #ffffff;"></i></a>
+    <a href="{{ route('admin.products.excel') }}" class="btn btn-success btn-lg" target="_blank" title="Ver Excel"><i
+            class="fa-solid fa-file-excel fa-lg" style="color: #ffffff;"></i></a>
+            
 
         <div class="card-body">
             @if ($products->count())
@@ -29,6 +35,8 @@
                             <th colspan="2">ACCIONES</th>
                         </tr>
                     </thead>
+
+         
 
 
                     <tbody>

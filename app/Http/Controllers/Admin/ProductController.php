@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Subcategory;
-use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel; // Agrega la importación de la clase Excel
+use PDF; // Agrega la importación de la clase PDF
+use App\Exports\ProductsExport; // Agrega la importación de la clase ProductsExport
 
 class ProductController extends Controller
 {
@@ -25,6 +27,17 @@ class ProductController extends Controller
         return view('admin.products.index', compact('products'));
     }
 
+    public function pdf()
+    {
+        $products = Product::all();
+        $pdf = PDF::loadView('admin.products.pdf', compact('products')); // Corregido: Cambiado de Pdf::loadView a PDF::loadView
+        return $pdf->stream();
+    }
+
+    public function excel()
+    {
+        return Excel::download(new ProductsExport, 'products.xlsx');
+    }
 
     public function create()
     {
@@ -47,7 +60,6 @@ class ProductController extends Controller
 
         $request->merge(['sku' => $sku]);
 
-
         $product = new Product($request->except('image_path'));
 
         if ($request->hasFile('image_path')) {
@@ -67,7 +79,6 @@ class ProductController extends Controller
 
         return view('admin.products.edit', compact('product', 'subcategories'));
     }
-
 
     public function update(Request $request, Product $product)
     {
@@ -89,7 +100,6 @@ class ProductController extends Controller
 
         return redirect()->route('admin.products.index')->with('info', 'Producto actualizado exitosamente.');
     }
-
 
     public function destroy(Product $product)
     {

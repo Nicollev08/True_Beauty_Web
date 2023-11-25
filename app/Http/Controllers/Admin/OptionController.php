@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Option;
+use App\Exports\OptionsExport; // Asegúrate de importar la clase OptionsExport
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel; // Asegúrate de importar la clase Excel
 
 class OptionController extends Controller
 {
@@ -12,6 +14,18 @@ class OptionController extends Controller
     {
         $options = Option::all();
         return view('admin.options.index', compact('options'));
+    }
+
+    public function pdf()
+    {
+        $options = Option::all();
+        $pdf = \PDF::loadView('admin.options.pdf', compact('options')); // Asegúrate de usar la clase correcta para generar PDF
+        return $pdf->stream();
+    }
+
+    public function excel()
+    {
+       return Excel::download(new OptionsExport, 'options.xlsx');
     }
 
     public function create()

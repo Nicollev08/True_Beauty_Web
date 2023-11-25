@@ -13,6 +13,14 @@
                 placeholder="Ingrese el nombre o correo del usuario">
         </div>
 
+        {{-- GENERAR REPORTES --}}
+    <a href="{{ route('admin.users.pdf') }}" class="btn btn-danger btn-lg" target="_blank" title="Ver Pdf"><i
+            class="fa-solid fa-file-pdf fa-lg" style="color: #ffffff;"></i></a>
+    <a href="{{ route('admin.users.excel') }}" class="btn btn-success btn-lg" target="_blank" title="Ver Excel"><i
+            class="fa-solid fa-file-excel fa-lg" style="color: #ffffff;"></i></a>
+
+        
+
 
         <div class="card-body">
 
@@ -24,7 +32,7 @@
                             <th>ID</th>
                             <th>NOMBRE</th>
                             <th>EMAIL</th>
-                            <th colspan="2"></th>
+                            <th colspaQn="2"></th>
                         </tr>
                     </thead>
 

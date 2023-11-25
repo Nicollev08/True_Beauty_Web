@@ -11,9 +11,16 @@
                 placeholder="Ingrese el nombre del tip">
         </div>
 
+        {{-- GENERAR REPORTES --}}
+    <a href="{{ route('admin.tips.pdf') }}" class="btn btn-danger btn-lg" target="_blank" title="Ver Pdf"><i
+            class="fa-solid fa-file-pdf fa-lg" style="color: #ffffff;"></i></a>
+    <a href="{{ route('admin.tips.excel') }}" class="btn btn-success btn-lg" target="_blank" title="Ver Excel"><i
+            class="fa-solid fa-file-excel fa-lg" style="color: #ffffff;"></i></a>
+
         <div class="card-body">
 
             @if ($tips->count())
+
 
                 <table class="table table-striped">
                     <thead>

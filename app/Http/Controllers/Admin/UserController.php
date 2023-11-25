@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-
 use Spatie\Permission\Models\Role;
+use PDF;
+use Maatwebsite\Excel\Facades\Excel; // Agregado: Importar la clase Excel
+use App\Exports\UsersExport; // Agregado: Importar la clase UsersExport
 
 class UserController extends Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('can:admin.users.index')->only('index');
         $this->middleware('can:admin.users.edit')->only('edit', 'update');
     }
@@ -20,12 +23,23 @@ class UserController extends Controller
         return view('admin.users.index');
     }
 
+    public function pdf()
+    {
+        $users = User::all();
+        $pdf = PDF::loadView('admin.users.pdf', compact('users'));
+        return $pdf->stream();
+    }
+
+    public function excel()
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
+    }
+
     public function create()
     {
         return view('admin.users.create');
     }
 
-    
     public function store(Request $request)
     {
         $request->validate([
@@ -45,30 +59,21 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(User $user)
     {
         $roles = Role::all();
         return view('admin.users.edit', compact('user', 'roles'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, User $user)
     {
         $user->roles()->sync($request->roles);
-        return redirect()->route('admin.users.edit', $user)->with('info', 'Se asignó los roles correctamente');
+        return redirect()->route('admin.users.edit', $user)->with('info', 'Se asignaron los roles correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('admin.users.index', $user)->with('info', 'Usuario eliminado exitósamente');
+        return redirect()->route('admin.users.index')->with('info', 'Usuario eliminado exitósamente');
     }
 }

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PDF CATEGORIA</title>
+    <title>PDF USUARIOS</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -29,7 +29,7 @@
     </div>
     <br>
     <div class="container mt-4">
-        <h1 class="text-center">category</h1> <br>
+        <h1 class="text-center">USUARIOS</h1> <br>
         <table class="table table-striped table-bordered">
             <thead class="cabecera">
                 <tr>
@@ -38,20 +38,20 @@
                 </tr>
             </thead>
 
-            @if ($categories->count())
+            @if ($users->count())
 
                 <tbody>
-                    @foreach ($categories as $category)
+                    @foreach ($users as $user)
                         <tr>
-                            <td>{{ $category->id }}</td>
-                            <td>{{ $category->name }}</td>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
 
                         </tr>
                     @endforeach
                 </tbody>
             @else
                 <div>
-                    No hay categorías registradas
+                    No hay usuarios registrados
                 </div>
 
             @endif
