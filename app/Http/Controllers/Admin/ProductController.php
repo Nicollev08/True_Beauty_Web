@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Subcategory;
@@ -28,8 +29,9 @@ class ProductController extends Controller
 
     public function create()
     {
-        $subcategories = Subcategory::all();
         $products = Product::all();
+        $subcategories = Subcategory::all();
+       
         return view('admin.products.create', compact('products', 'subcategories'));
     }
 
@@ -40,6 +42,7 @@ class ProductController extends Controller
             'description' => 'required',
             'image_path' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'price' => 'required',
+            'status' => 'nullable',
             'subcategory_id' => 'required'
         ]);
 
@@ -60,12 +63,18 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with('info', 'Producto creado exitósamente');
     }
 
+    
     public function edit(Product $product)
     {
+        $statusLabels = [
+            Product::BORRADOR => 'Borrador',
+            Product::PUBLICADO => 'Publicado',
+        ];
+
         $subcategories = Subcategory::all();
         $products = Product::all();
 
-        return view('admin.products.edit', compact('product', 'subcategories'));
+        return view('admin.products.edit', compact('product', 'subcategories', 'statusLabels'));
     }
 
 
@@ -77,6 +86,7 @@ class ProductController extends Controller
             'description' => 'required',
             'image_path' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'price' => 'required',
+            'status' => 'nullable',
             'subcategory_id' => 'required'
         ]);
 

@@ -354,12 +354,17 @@ return [
         [
             'text' => 'Subcategorías',
             'route'  => 'admin.subcategories.index',
-            'icon' => 'fas fa-fw fa-tags',
+            'icon' => 'fas fa-fw fa-pen',
         ],
         [
-            'text' => 'Opciones',
-            'route'  => 'admin.options.index',
-            'icon' => 'fas fa-fw fa-pen',
+            'text' => 'Departamentos',
+            'route'  => 'admin.departments.index',
+            'icon' => 'fas fa-fw fa-map',
+        ],
+        [
+            'text' => 'Ciudades',
+            'route'  => 'admin.cities.index',
+            'icon' => 'fas fa-fw fa-city',
         ],
         // [
         //     'text' => 'change_password',

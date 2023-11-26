@@ -24,7 +24,7 @@
                             <th>ID</th>
                             <th>NOMBRE</th>
                             <th>EMAIL</th>
-                            <th colspan="2"></th>
+                            <th colspan="2">ACCIONES</th>
                         </tr>
                     </thead>
 

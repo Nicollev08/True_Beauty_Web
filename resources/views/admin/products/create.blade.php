@@ -62,7 +62,7 @@
                 <div class="mb-3">
                     <label for="subcategory_id">Categoría</label>
                     <select name="subcategory_id" id="subcategory_id">
-                        <option value="">Seleccione una categoría</option>
+                        <option value="">Seleccione una subcategoría</option>
                         @foreach ($subcategories as $subcategory)
                             <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
                         @endforeach

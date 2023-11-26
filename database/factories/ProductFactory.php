@@ -34,9 +34,9 @@ class ProductFactory extends Factory
 
             'image_path' => 'products_images/'. $this->faker->image('public/storage/products_images', 640, 480, null, false),
             
-            'price' => $this->faker->randomElement([19.99, 49.99, 99.99]),
+            'price'=> $this->faker->randomFloat(3, 1, 900),
             'quantity' => $this->faker->randomNumber(), 
-            //'status' => 2,
+            'status' => 2,
             'subcategory_id'=> $subcategory->id,
             //'brand_id'=> $brand->id,
             //'quantity' => $quantity

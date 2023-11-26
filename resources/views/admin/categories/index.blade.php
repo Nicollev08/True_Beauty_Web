@@ -25,7 +25,7 @@
             class="fa-solid fa-file-pdf fa-lg" style="color: #ffffff;"></i></a>
     <a href="{{ route('admin.categories.excel') }}" class="btn btn-success btn-lg" target="_blank" title="Ver Excel"><i
             class="fa-solid fa-file-excel fa-lg" style="color: #ffffff;"></i></a>
-
+            
     <div class="card">
 
         <div class="card-body">

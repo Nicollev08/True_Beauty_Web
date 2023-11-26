@@ -1,9 +1,11 @@
-<div>
-    <section>
+<div class="bg-gray-200">
+    @livewire('product-navigation')
+    <br>
+    <section class="">
         <div class="slider">
             <div>
                 @foreach ($categories as $category)
-                    <section class=" container py-4 mb-24">
+                    <section class=" container py-2 mb-20">
                         <div class="flex items-center mb-2">
                             <h1 class="text-lg uppercase font-semibold text-gray-700">
                                 {{ $category->name }}
@@ -13,12 +15,14 @@
                                 más</a>
                         </div>
 
-                        {{-- Paso el parámetro $category al componente category-products --}}
                         @livewire('home.category-products', ['category' => $category])
                     </section>
 
                 @endforeach
             </div>
+        </div>
+        <div class="py-10">
+            
         </div>
     </section>
 

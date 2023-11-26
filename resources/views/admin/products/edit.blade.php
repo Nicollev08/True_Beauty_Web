@@ -49,8 +49,8 @@
 
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Stock</label>
-                    <input type="text" class="form-control" name="quantity" id="quantity" value="{{ $product->quantity }}"
-                        placeholder="Nombre del producto">
+                    <input type="text" class="form-control" name="quantity" id="quantity"
+                        value="{{ $product->quantity }}" placeholder="Nombre del producto">
 
                     @error('quantity')
                         <span class="text-danger">{{ $message }}</span>
@@ -65,11 +65,23 @@
                             <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
                         @endforeach
                     </select>
-                </div>                
+                </div>
+
+                <div class="mb-3">
+                    <label for="status">ESTADO</label>
+                    <select name="status" id="status">
+                        @foreach ($statusLabels as $value => $label)
+                            <option value="{{ $value }}" {{ $product->status == $value ? 'selected' : '' }}>
+                                {{ $label }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
 
                 <div class="mb-3">
                     <label class="form-label" for="image_path">Imagen actual</label>
-                    <img src="{{ asset('storage/' . $product->image_path) }}" alt="Imagen actual" style="max-width: 100px;">
+                    <img src="{{ asset('storage/' . $product->image_path) }}" alt="Imagen actual"
+                        style="max-width: 100px;">
                 </div>
 
                 <div class="mb-3">

@@ -19,38 +19,8 @@
     --normal-font-size: 1rem;
     --small-font-size: 0.813rem;
 }
-html{
-    scroll-behavior: smooth;
-}
 
-body{
-    background-color: var(--white-color);
-   
-    overflow-x: hidden;
-}
-ul{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-}
 
-.row{
-    display: flex;
-    flex-wrap: wrap;
-}
-.section{
-    padding: calc(var(--header-height) + 20px) 0;
-}
-.grid{
-    display: grid;
-    gap: 20px;
-}
-.flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 /* NAV */
 .header{
     background: black;
@@ -63,7 +33,7 @@ a{
     border-bottom: var(--border);
     position: fixed;
     top:0; left: 0; right: 0;
-    z-index: 100;
+    z-index: 200;
 }
 
 .header .logo img{

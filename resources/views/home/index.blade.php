@@ -1,5 +1,3 @@
- @extends('layouts.menu')
-
 
  <!DOCTYPE html>
  <html lang="es">
@@ -12,16 +10,17 @@
 
      <link rel="shortcut icon" href="/IMG/logo.png" type="image/x-icon">
      <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-     
+
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+     <link rel="stylesheet" type="text/css"
+         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-     
+
 
      <script src="JS/index.js"></script>
 
@@ -292,6 +291,11 @@
                      <span>Todo lo mejor para tí</span>
                  </div>
              </div>
+             <br>
+             <section>
+                {{-- @livewire('product-navigation') --}}
+             </section>
+           
 
              @livewire('home.slider-products')
 

@@ -22,21 +22,29 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-// PRODUCTOS
-Route::get('/products', [ProductController::class, 'index']);
-Route::post('/products', [ProductController::class, 'store']);
-Route::put('/products/{product}', [ProductController::class, 'update']);
-Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+// //PRODUCTOS
+// Route::get('/products', [ProductController::class, 'index']);
+// Route::post('/products', [ProductController::class, 'store']);
+// Route::get('/products/{product}', [ProductController::class, 'show']);
+// Route::put('/products/{product}', [ProductController::class, 'update']);
+// Route::delete('/products/{product}', [ProductController::class, 'destroy']);
 
-//TIPS
-Route::get('/tips', [TipController::class, 'index']);
-Route::post('/tips', [TipController::class, 'store']);
-Route::put('/tips/{tips}', [TipController::class, 'update']);
-Route::delete('/tips/{tips}', [TipController::class, 'destroy']);
+// //TIPS
+// Route::get('/tips', [TipController::class, 'index']);
+// Route::post('/tips', [TipController::class, 'store']);
+// Route::get('/tips/{tips}', [TipController::class, 'show']);
+// Route::put('/tips/{tips}', [TipController::class, 'update']);
+// Route::delete('/tips/{tips}', [TipController::class, 'destroy']);
 
-//USERS
-Route::get('/users', [UserController::class, 'index']);
-Route::post('/users', [UserController::class, 'store']);
-Route::put('/users/{users}', [UserController::class, 'update']);
-Route::delete('/users/{users}', [UserController::class, 'destroy']);
+// //USERS
+// Route::get('/users', [UserController::class, 'index']);
+// Route::post('/users', [UserController::class, 'store']);
+// //Route::get('/users/{users}', [UserController::class, 'show']);
+// Route::put('/users/{users}', [UserController::class, 'update']);
+// Route::delete('/users/{users}', [UserController::class, 'destroy']);
+
+
+Route::apiResource('users', UserController::class)->names('usuarios');
+Route::apiResource('products', ProductController::class)->names('productos');
+Route::apiResource('tips', TipController::class)->names('belleza');
 

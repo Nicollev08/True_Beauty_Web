@@ -25,6 +25,7 @@
                             <th>IMAGEN</th>
                             <th>PRECIO</th>
                             <th>STOCK</th>
+                            <th>ESTADO</th>
                             <th>SUBCATEGORÍA</th>
                             <th colspan="2">ACCIONES</th>
                         </tr>
@@ -44,6 +45,24 @@
                                 </td>
                                 <td>{{ $product->price }}</td>
                                 <td>{{ $product->quantity }}</td>
+                                <td> @switch($product->status)
+                                        @case(1)
+                                            <span
+                                                class="text-danger">
+                                                Borrador
+                                            </span>
+                                        @break
+
+                                        @case(2)
+                                            <span
+                                                class="text-success">
+                                                Publicado
+                                            </span>
+                                        @break
+
+                                        @default
+                                    @endswitch
+                                </td>
 
                                 <td>{{ $product->subcategory->name }}</td>
 

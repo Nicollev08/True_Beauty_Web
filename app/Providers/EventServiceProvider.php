@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Event;
 use App\Models\Product;
 use App\Observers\ProductObserver;
 
+use Illuminate\Auth\Events\Login;
+use Illuminate\Auth\Events\Logout;
+
 class EventServiceProvider extends ServiceProvider
 {
     /**
@@ -21,6 +24,14 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+
+        Login::class => [
+            "App\Listeners\MergeTheCart"
+        ],
+
+        Logout::class => [
+            "App\Listeners\MergeTheCartLogout"
+        ]
     ];
 
     /**

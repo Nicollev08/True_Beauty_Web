@@ -10,8 +10,6 @@ class SliderProducts extends Component
 {
     public $category;
 
-    protected $listeners = ['categoryUpdated' => 'updateCategory'];
-
     public function mount($category = null)
     {
         $this->category = $category ?? Category::first();

@@ -8,13 +8,19 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TipController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\OptionController;
 use App\Http\Controllers\Admin\SubcategoryController;
+
 use App\Http\Controllers\Admin\ProfileController;
+
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\ShowDepartmentController;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Dompdf\Dompdf;
 
-Route::get('', [HomeController::class, 'index'])->name('admin.home');
+
+Route::get('', [HomeController::class, 'index'])->middleware('can:admin.home')->name('admin.home');
 
 //REPORTES
 Route::get('categories/pdf', [CategoryController::class, 'pdf'])->name('admin.categories.pdf');
@@ -26,9 +32,6 @@ Route::resource('users', UserController::class)->except('show')->names('admin.us
 
 Route::resource('categories', CategoryController::class)->except('show')->names('admin.categories');
 
-
-Route::resource('options', OptionController::class)->except('show')->names('admin.options');
-
 Route::resource('subcategories', SubcategoryController::class)->except('show')->names('admin.subcategories');
 
 Route::resource('roles', RoleController::class)->except('show')->names('admin.roles');
@@ -37,6 +40,14 @@ Route::resource('products', ProductController:: class)->except('show')->names('a
 
 Route::resource('tips', TipController::class)->except('show')->names('admin.tips');
 
+Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index');
+Route::get('orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
+
+Route::resource('departments', DepartmentController::class)->except('show')->names('admin.departments');
+Route::resource('cities', Controller::class)->except('show')->names('admin.cities');
+
+
+//Route::get('cities/{city}', CityComponent::class)->name('admin.cities.show');
 
 Route::middleware(['auth'])->group(function () {
     

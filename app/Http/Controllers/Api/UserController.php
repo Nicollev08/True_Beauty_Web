@@ -10,8 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        return response()->json($users);
+        return User::all();
     }
   
     public function store(Request $request)
@@ -21,6 +20,13 @@ class UserController extends Controller
             'user' => $user,
             'mensaje' => "Tip creado correctamente"
         ]); 
+    }
+
+    public function show(User $user){
+        User::all();
+        return response()->json([
+            'user'=>$user
+        ]);
     }
   
     public function update(Request $request, User $user)

@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.css" integrity="sha512-YM6sLXVMZqkCspZoZeIPGXrhD9wxlxEF7MzniuvegURqrTGV2xTfqq1v9FJnczH+5OGFl5V78RgHZGaK34ylVg==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.js" integrity="sha512-tHimK/KZS+o34ZpPNOvb/bTHZb6ocWFXCtdGqAlWYUcz+BGHbNbHMKvEHUyFxgJhQcEO87yg5YqaJvyQgAEEtA==" crossorigin="anonymous"></script>
 
-    <div class="bg-white rounded-lg shadow-lg mb-6">
+    <div class="bg-white rounded-lg shadow mb-4 w-full">
         <div class="px-6 py-2 flex justify-between items-center">
             <h1 class="font-semibold text-gray-700 uppercase">{{$category->name}}</h1>
 
@@ -30,7 +30,7 @@
                 @endforeach
             </ul>
 
-            <x-button class="mt-4" wire:click="limpiar">
+            <x-button class="mt-4 text-white" wire:click="limpiar">
                 Eliminar filtros
             </x-button>
         </aside>
@@ -53,7 +53,7 @@
                                             </a>
                                         </h1>
 
-                                        <p class="font-bold text-trueGray-700">US$ {{$product->price}}</p>
+                                        <p class="font-bold text-trueGray-700">$ {{$product->price}}</p>
                                 </div>
                             </article>
                         </li>

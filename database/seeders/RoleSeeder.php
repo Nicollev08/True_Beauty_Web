@@ -33,6 +33,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.users.destroy',
                             'description' => 'Eliminar usuarios'])->syncRoles([$role1]);
 
+
         Permission::create(['name' => 'admin.roles.index',
                             'description' => 'Ver listado de Roles'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'admin.roles.create',
@@ -63,7 +64,6 @@ class RoleSeeder extends Seeder
                             'description' => 'Eliminar tips'])->syncRoles([$role1, $role2]);
 
 
-
         Permission::create(['name' => 'admin.categories.index',
                             'description' => 'Ver listado de categorías'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'admin.categories.create',
@@ -84,13 +84,23 @@ class RoleSeeder extends Seeder
                             'description' => 'Eliminar subcategorías'])->syncRoles([$role1, $role2]);
 
 
-        Permission::create(['name' => 'admin.options.index',
-                            'description' => 'Ver listado de opciones'])->syncRoles([$role1, $role2]);
-        Permission::create(['name' => 'admin.options.create',
-                            'description' => 'Agregar opciones'])->syncRoles([$role1, $role2]);
-        Permission::create(['name' => 'admin.options.edit',
-                            'description' => 'Editar opciones'])->syncRoles([$role1, $role2]);
-        Permission::create(['name' => 'admin.options.destroy',
-                            'description' => 'Eliminar opciones'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.departments.index',
+                            'description' => 'Ver listado de departments'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.departments.create',
+                            'description' => 'Agregar departments'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.departments.edit',
+                            'description' => 'Editar departments'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.departments.destroy',
+                            'description' => 'Eliminar departments'])->syncRoles([$role1]);
+
+                            
+        Permission::create(['name' => 'admin.cities.index',
+                            'description' => 'Ver listado de Ciudades'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.cities.create',
+                            'description' => 'Agregar Ciudades'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.cities.edit',
+                            'description' => 'Editar Ciudades'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.cities.destroy',
+                            'description' => 'Eliminar Ciudades'])->syncRoles([$role1]);
     }
 }

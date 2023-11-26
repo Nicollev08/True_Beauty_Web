@@ -61,7 +61,6 @@ body{
 }
 main{
     position: relative;
-    padding-top: 90px;
 }
 ul{
     list-style: none;
@@ -115,7 +114,7 @@ a{
     color: var(--white-color);
 }
 /* BUTTON */
-.boton{
+.agendar{
     width: 240px;
     display: flex;
     align-items: center;
@@ -123,7 +122,7 @@ a{
     text-align: center;
     background-color: var(--cafe-color);
     color: var(--white-color);
-    border: 1px solid var(--black-color);
+    border: 1px solid var(--cafe-color);
     border-radius: 50px;
     font-size: var(--normal-font-size);
     font-weight: var(--font-semi-bold);
@@ -134,19 +133,19 @@ a{
     cursor: pointer;
     transition: all 400ms ease;
 }
-.boton:hover{
+.agendar:hover{
     background-color: transparent;
-    color: var(--black-color);
+    color: var(--cafe-color);
 }
-.boton__agenda{
+.agendar{
     width: 280px;
     background-color: transparent;
-    color: var(--black-color);
+    color: var(--cafe-color);
     padding: 5px 10px 5px 0;
     transition: all 400ms ease-in-out;
     position: relative;
 }
-.boton__agenda::before{
+.agendar::before{
     content: "";
     position: absolute;
     top: 0;
@@ -158,19 +157,19 @@ a{
     border-radius: 50px;
     transition:  all 400ms ease-in-out;
 }
-.boton__agenda i{
+.agendar i{
     position: relative;
-    left: -33px;
+    left: -38px;
     margin-right: var(--mb-1-5);
     font-size: var(--h2-font-size);
     color: var(--white-color);
     z-index: var(--z-tooltip);
 }
-.boton__agenda:hover::before{
+.agendar:hover::before{
     width: 100%;
     z-index: var(--z_negative);
 }
-.boton__agenda:hover{
+.agendar:hover{
     color: var(--white-color);
     z-index: var(--z-tooltip);
 }
@@ -195,7 +194,7 @@ a{
     flex-flow: column;
     padding-top: 20rem;
     text-align:left;
-    margin: 0 30px;
+    padding-left: 20px;
 }
 
 .home .content h1{
@@ -609,7 +608,9 @@ a{
     margin-top: 50px;
     top: 100px;
 
-
+    
+  
+     /* Esto coloca el botón al final */
   }
   
   .opbtn:hover {

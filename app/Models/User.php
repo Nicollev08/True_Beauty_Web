@@ -99,4 +99,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(SocialProfile::class);
     }
+
+    //Relacion uno a muchos
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
 }

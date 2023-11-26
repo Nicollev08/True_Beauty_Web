@@ -42,4 +42,14 @@ return [
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT_URI')
     ],
+    
+    'mercadopago' => [
+        'key' => env('MP_PUBLIC_KEY'),
+        'token' => env('MP_ACCSESS_TOKEN')
+    ],
+
+    'paypal' => [
+        'client_id' => env('PAYPAL_CLIENT_ID'),
+        'secret' => env('PAYPAL_SECRET')
+    ]
 ];

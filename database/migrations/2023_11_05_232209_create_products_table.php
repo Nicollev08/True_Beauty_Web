@@ -19,8 +19,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('image_path');
-            $table->float('price');
+            $table->double('price');
             $table->integer('quantity');
+
+            $table->enum('status', [Product::BORRADOR, Product::PUBLICADO])->default(Product::BORRADOR);
 
             $table->foreignId('subcategory_id')
                 ->constrained()
