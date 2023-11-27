@@ -101,8 +101,8 @@
                     @foreach ($items as $item)
                         <tr>
                             <td>
-                                <div class="flex">
-                                    <img class="h-15 w-20 object-cover mr-4" src=""
+                                <div class="flex justify-start">
+                                    <img class="h-15 w-20 object-cover mr-4" src="{{$item->options->image_path}}"
                                         alt="">
                                     <article>
                                         <h1 class="font-bold">{{ $item->name }}</h1>

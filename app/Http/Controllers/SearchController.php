@@ -13,7 +13,7 @@ class SearchController extends Controller
         $name = $request->name;
 
         $products = Product::where('name', 'LIKE' ,'%' . $name . '%')
-                                // ->where('status', 2)
+                                ->where('status', 2)
                                 ->paginate(8);
 
         return view('home.search', compact('products'));

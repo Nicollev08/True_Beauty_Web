@@ -15,6 +15,7 @@ class OrderPolicy
         }
     }
 
+    //SE VA A PROHIBIR LA RUTA DEL PAYMENT EN CASO DE QUE YA HAYA PAGADO LA ORDEN PORQUE SERIA ILOGICO VOLVERLA A PAGAR
     public function payment(User $user, Order $order){
         if ($order->status == 2) {
             return false;

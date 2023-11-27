@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TipController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubcategoryController;
 
@@ -36,6 +37,8 @@ Route::resource('subcategories', SubcategoryController::class)->except('show')->
 
 Route::resource('roles', RoleController::class)->except('show')->names('admin.roles');
 
+Route::resource('services', ServiceController::class)->except('show')->names('admin.services');
+
 Route::resource('products', ProductController:: class)->except('show')->names('admin.products');
 
 Route::resource('tips', TipController::class)->except('show')->names('admin.tips');
@@ -44,10 +47,11 @@ Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.inde
 Route::get('orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
 
 Route::resource('departments', DepartmentController::class)->except('show')->names('admin.departments');
-Route::resource('cities', Controller::class)->except('show')->names('admin.cities');
+
+Route::resource('cities', CityController::class)->except('show')->names('admin.cities');
 
 
-//Route::get('cities/{city}', CityComponent::class)->name('admin.cities.show');
+
 
 Route::middleware(['auth'])->group(function () {
     

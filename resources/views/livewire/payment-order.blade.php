@@ -19,9 +19,9 @@
                                 <p class="text-sm">Calle falsa 123</p>
                             @else
                                 <p class="text-sm">Los productos Serán enviados a:</p>
-                                {{-- <p class="text-sm">{{ $envio->address }}</p>
-                            <p>{{ $envio->department }} - {{ $envio->city }} - {{ $envio->district }}
-                            </p> --}}
+                                <p class="text-sm">{{ $envio->address }}</p>
+                            <p>{{ $envio->department }} - {{ $envio->city }}
+                            </p> 
                             @endif
 
 
@@ -54,21 +54,11 @@
                             @foreach ($items as $item)
                                 <tr>
                                     <td>
-                                        <div class="flex">
-                                            <img class="h-15 w-20 object-cover mr-4" src=""
+                                        <div class="flex justify-start">
+                                            <img class="h-15 w-20 object-cover mr-4" src="{{$item->options->image_path}}"
                                                 alt="">
                                             <article>
                                                 <h1 class="font-bold">{{ $item->name }}</h1>
-                                                <div class="flex text-xs">
-
-                                                    @isset($item->options->color)
-                                                        Color: {{ __($item->options->color) }}
-                                                    @endisset
-
-                                                    @isset($item->options->size)
-                                                        - {{ $item->options->size }}
-                                                    @endisset
-                                                </div>
                                             </article>
                                         </div>
                                     </td>

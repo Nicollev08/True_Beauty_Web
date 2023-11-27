@@ -1,9 +1,5 @@
 <x-app-layout>
 
-    <head>
-
-    </head>
-
     <body>
 
         <!--MENU-->
@@ -21,7 +17,7 @@
                     <p>Enamórate de cuidarte</p>
                     <p>Enamórate de ti.</p>
 
-                    <a href="#" class="agendar"><i class="fa-solid fa-calendar-days"></i> Agendar cita </a>
+                    <a href="/eventos" class="agendar"><i class="fa-solid fa-calendar-days"></i> Agendar cita </a>
                 </div>
             </section>
 
@@ -45,7 +41,7 @@
                                 <img src="/IMG/tip1.jpg" alt="">
                             </div>
                             <div class="content">
-                                <h2>Hidrata tu rostro antes del maquillaje</h2>
+                                <h2><b>Hidrata tu rostro antes del maquillaje</b></h2>
                                 <p>Si quieres un maquillaje perfecto, pasa un hielo de zumo de pepino con sábila por el
                                     rostro y el cuello.
                                     Esto dejará la piel tersa para poder poner cualquier producto de belleza.</p>
@@ -56,7 +52,7 @@
                                 <img src="/IMG/tip2.jpg" alt="">
                             </div>
                             <div class="content">
-                                <h2>Cepilla tu cabello con cerdas naturales</h2>
+                                <h2><b>Cepilla tu cabello con cerdas naturales</b></h2>
                                 <p>Usa cepillos con cerdas naturales. Son muy comunes las cerdas de jabalí, pues el
                                     cabello
                                     no produce el frizz que producen las cerdas plásticas. Además, la grasa natural del
@@ -68,7 +64,7 @@
                                 <img src="/IMG/tip3.jpg" alt="">
                             </div>
                             <div class="content">
-                                <h2>Agua fría para el cabello</h2>
+                                <h2> <b>Agua fría para el cabello</b></h2>
                                 <p>Si quieres evitar la caída de tu cabello y prevenir la resequedad, además de utilizar
                                     tratamientos anticaída, también debes enjuaga tu pelo después del lavado con agua
                                     fría,
@@ -84,7 +80,7 @@
                                 <img src="/IMG/tip4.jpg" alt="">
                             </div>
                             <div class="content">
-                                <h2>Desinflama tus párpados</h2>
+                                <h2><b>Desinflama tus párpados</b></h2>
                                 <p>Necesitas lucir perfecta después de una noche de fiesta o simplemente después de
                                     dormir
                                     un largo tiempo. Envuelve un trozo de hielo con una toalla y ponlo sobre el área
@@ -96,7 +92,7 @@
                                 <img src="/IMG/tip5.jpg" alt="">
                             </div>
                             <div class="content">
-                                <h2>Talco para el exceso de grasa en el cabello</h2>
+                                <h2><b>Talco para el exceso de grasa en el cabello</b></h2>
                                 <p>Para mejorar un cabello visiblemente graso, usa talco. Muchas veces alguna urgencia
                                     impide lavar el cabello con tiempo. Si es tu caso, aplica un poco de talco a las
                                     cerdas
@@ -108,7 +104,7 @@
                                 <img src="/IMG/tip6.jpg" alt="">
                             </div>
                             <div class="content">
-                                <h2>Uñas siempre fuertes y limpias</h2>
+                                <h2><b>Uñas siempre fuertes y limpias</b></h2>
                                 <p>Las uñas son la carta de presentación de las manos. Por eso deben lucir limpias y
                                     sanas.
                                     Aplica limón antes de dormir, tus uñas estarán siempre limpias y fuertes para los

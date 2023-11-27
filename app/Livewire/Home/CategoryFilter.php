@@ -49,7 +49,6 @@ class CategoryFilter extends Component
             });
         }
 
-
         $products = $productsQuery->paginate(20);
 
         return view('livewire.home.category-filter', compact('products'));

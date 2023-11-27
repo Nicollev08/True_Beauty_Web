@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\EventoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
@@ -14,16 +15,6 @@ use App\Livewire\ShoppingCart;
 use App\Livewire\CreateOrder;
 use App\Livewire\PaymentOrder;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', WelcomeController::class);
 
@@ -41,6 +32,8 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
+
 Route::get('search', SearchController::class)->name('search');
 
 Route::get('products/show/{product}', [ProductController::class, 'show'])->name('products.show');
@@ -49,7 +42,7 @@ Route::get('categories/show/{category}', [CategoryController::class, 'show'])->n
 
 Route::get('shopping-cart', ShoppingCart::class)->name('shopping.cart');
 
-//Route::get('shopping-cart', [ShoppingCartController::class, 'show'])->name('shopping.cart');
+
 
 
 Route::middleware(['auth'])->group(function(){
@@ -63,13 +56,22 @@ Route::middleware(['auth'])->group(function(){
     Route::get('orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 
 
-    // Route::get('orders/{order}/pay', [OrderController::class, 'pay'])->name('orders.pay');
 
-    // Route::post('webhooks', WebhooksController::class);
+    /////AGENDA
+
+    Route::resource('/eventos', EventoController::class)->only(['index', 'store']);
+
+    Route::post('/eventos/mostrar', [EventoController::class, 'show']);
+
+    Route::post('/eventos/edit/{id}', [EventoController::class, 'edit']);
+
+    Route::post('/eventos/update/{evento}', [EventoController::class, 'update']);
+
+    Route::post('/eventos/eliminar/{id}', [EventoController::class, 'destroy']);
 
 });
 
-
+///LOGIN FACEBOOK Y GOOGLE
 Route::get('/auth/{driver}/redirect', [AuthController::class, 'redirect']);
  
 Route::get('/auth/{driver}/callback', [AuthController::class, 'callback']);

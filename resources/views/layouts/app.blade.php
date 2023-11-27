@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'True Beauty') }}</title>
+    <title>True Beauty</title>
 
     <link rel="shortcut icon" href="/IMG/logo.png" type="image/x-icon">
 
@@ -28,13 +28,6 @@
     
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.css"
-        integrity="sha512-YM6sLXVMZqkCspZoZeIPGXrhD9wxlxEF7MzniuvegURqrTGV2xTfqq1v9FJnczH+5OGFl5V78RgHZGaK34ylVg=="
-        crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.js"
-        integrity="sha512-tHimK/KZS+o34ZpPNOvb/bTHZb6ocWFXCtdGqAlWYUcz+BGHbNbHMKvEHUyFxgJhQcEO87yg5YqaJvyQgAEEtA=="
-        crossorigin="anonymous"></script>
-
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -44,16 +37,27 @@
     <!-- Styles -->
     @livewireStyles
 
+    <script type="text/javascript">
+        var baseURL = {!! json_encode(url('/')) !!}
+    </script>
+
 
 </head>
 
 <body class="font-sans antialiased">
-    
     <x-banner />
 
-    <div>
+    <div class="min-h-screen">
         @livewire('menu')
 
+        <!-- Page Heading -->
+        @if (isset($header))
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
+        @endif
 
         <!-- Page Content -->
         <main>

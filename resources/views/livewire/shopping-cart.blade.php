@@ -34,8 +34,8 @@
                             <td class="">
                                 <div class="flex justify-start">
                                     <div class="inline-block h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full object-cover object-center"
-                                            src="{{ $item->image_path }}" alt="">
+                                        <img class="h-10 w-10 object-cover object-center"
+                                            src="{{$item->options->image_path}}" alt="">
                                     </div>
                                     <div class="inline-block ml-4">
                                         <div class="text-sm font-medium text-gray-900">

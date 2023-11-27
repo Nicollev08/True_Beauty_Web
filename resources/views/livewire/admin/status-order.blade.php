@@ -102,7 +102,7 @@
                 @else
                     <p class="text-sm">Los productos Serán enviados a:</p>
                     <p class="text-sm">{{ $envio->address }}</p>
-                    <p>{{ $envio->department }} - {{ $envio->city }} - {{ $envio->district }}
+                    <p>{{ $envio->department }} - {{ $envio->city }}
                     </p>
                 @endif
 
@@ -135,23 +135,23 @@
                 @foreach ($items as $item)
                     <tr>
                         <td>
-                            <div class="d-flex">
-                                <img class="h-15 w-20 object-cover me-4" src="{{ $item->name }}" alt="">
-                                <div>
-                                    <h1 class="font-bold">{{ $item->name }}</h1>
+                            <div class="d-flex align-items-center">
+                                <img class="mr-3" src="{{$item->options->image_path}}" alt="" style="max-height: 60px; max-width: 60px;">
+                                <div class="">
+                                    <h1 class="font-bold w-10" style="font-size: 20px">{{ $item->name }}</h1>
                                 </div>
                             </div>
                         </td>
 
-                        <td class="text-center">
+                        <td style="text-align: left">
                             {{ $item->price }} USD
                         </td>
 
-                        <td class="text-center">
+                        <td style="text-align: left">
                             {{ $item->qty }}
                         </td>
 
-                        <td class="text-center">
+                        <td style="text-align: left">
                             {{ $item->price * $item->qty }} USD
                         </td>
                     </tr>

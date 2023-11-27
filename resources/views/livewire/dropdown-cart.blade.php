@@ -20,22 +20,18 @@
 
         <x-slot name="content">
             @php
-              // dd(Cart::content());
+              //dd(Cart::content());
             @endphp
 
             <ul>
                 @forelse (Cart::content() as $item)
                     <li class="flex p-2 w-96 border-b border-gray-200">
 
-                        <img class="h-15 w-20 object-cover mr-4" src="{{$item->options->image}}"> 
+                        <img class="h-15 w-20 object-cover mr-4" src="{{$item->options->image_path}}"> 
 
                         {{-- <img class="h-15 w-20 object-cover mr-4" 
                         src="{{ asset('storage/products_images/' . $item->options['product']['image_path']) }}"> --}}
                    
-
-
-
-
 
                         <article class="flex-1">
                             <h1 class="font-bold">{{ $item->name }}</h1>

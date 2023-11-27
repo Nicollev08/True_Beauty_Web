@@ -342,6 +342,11 @@ return [
             'icon' => 'fas fa-fw fa-star-and-crescent',            
         ],
         [
+            'text' => 'Servicios',
+            'route'  => 'admin.services.index',
+            'icon' => 'fas fa-fw fa-spray-can',
+        ],
+        [
             'text' => 'Productos',
             'route'  => 'admin.products.index',
             'icon' => 'fas fa-fw fa-spray-can',
@@ -355,6 +360,11 @@ return [
             'text' => 'Subcategorías',
             'route'  => 'admin.subcategories.index',
             'icon' => 'fas fa-fw fa-pen',
+        ],
+        [
+            'text' => 'Ordenes',
+            'route'  => 'admin.orders.index',
+            'icon' => 'fas fa-fw fa-truck',
         ],
         [
             'text' => 'Departamentos',

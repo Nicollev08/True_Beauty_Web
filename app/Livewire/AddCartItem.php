@@ -11,7 +11,7 @@ use Gloudemans\Shoppingcart\Contracts\Buyable;
 class AddCartItem extends Component
 {
     public $product, $quantity;
-   // public $options = ['image_path'];
+   public $options = [];
 
     public $qty = 1;
 
@@ -22,7 +22,7 @@ class AddCartItem extends Component
         //$this->image_path = Storage::url($this->product->image_path);
         //$this->image_path = Storage::url($this->product->image_path);
         // Agrega la siguiente línea para imprimir la URL en la consola del servidor
-        //$this->options['image_path'] = Storage::url($this->product->image_path);
+        $this->options['image_path'] = Storage::url($this->product->image_path);
 
        // dd($this->options);
 
@@ -47,7 +47,7 @@ class AddCartItem extends Component
             'qty' => $this->qty,
             'price' => $this->product->price,
             'weight' => 550,
-            'options' => $this->product->image_path
+            'options' => $this->options,
         ]);
         $this->quantity = qty_available($this->product->id);
 
