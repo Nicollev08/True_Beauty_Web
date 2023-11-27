@@ -61,7 +61,6 @@ body{
 }
 main{
     position: relative;
-    padding-top: 90px;
 }
 ul{
     list-style: none;
@@ -115,7 +114,7 @@ a{
     color: var(--white-color);
 }
 /* BUTTON */
-.btn{
+.agendar{
     width: 240px;
     display: flex;
     align-items: center;
@@ -134,11 +133,11 @@ a{
     cursor: pointer;
     transition: all 400ms ease;
 }
-.btn:hover{
+.agendar:hover{
     background-color: transparent;
     color: var(--cafe-color);
 }
-.btn__outline{
+.agendar{
     width: 280px;
     background-color: transparent;
     color: var(--cafe-color);
@@ -146,7 +145,7 @@ a{
     transition: all 400ms ease-in-out;
     position: relative;
 }
-.btn__outline::before{
+.agendar::before{
     content: "";
     position: absolute;
     top: 0;
@@ -158,19 +157,19 @@ a{
     border-radius: 50px;
     transition:  all 400ms ease-in-out;
 }
-.btn__outline i{
+.agendar i{
     position: relative;
-    left: -33px;
+    left: -38px;
     margin-right: var(--mb-1-5);
     font-size: var(--h2-font-size);
     color: var(--white-color);
     z-index: var(--z-tooltip);
 }
-.btn__outline:hover::before{
+.agendar:hover::before{
     width: 100%;
     z-index: var(--z_negative);
 }
-.btn__outline:hover{
+.agendar:hover{
     color: var(--white-color);
     z-index: var(--z-tooltip);
 }
@@ -195,7 +194,7 @@ a{
     flex-flow: column;
     padding-top: 20rem;
     text-align:left;
-    margin: 0 30px;
+    padding-left: 20px;
 }
 
 .home .content h1{

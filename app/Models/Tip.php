@@ -13,4 +13,12 @@ class Tip extends Model
         'description',
         'image',
     ];
+
+
+
+
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('name', 'LIKE', '%' . $search . '%');
+    }
 }

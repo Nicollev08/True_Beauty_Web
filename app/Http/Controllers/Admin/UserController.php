@@ -34,9 +34,10 @@ class UserController extends Controller
             'password' => 'required',
         ]);
 
-        $user = User::create($request->all());
+        $user = new User($request->all());
+        $user->save();
 
-        return redirect()->route('admin.users.index')->with('info', 'Rol creado exitósamente');
+        return redirect()->route('admin.users.index')->with('info', 'Usuario creado exitósamente');
     }
 
     public function show(string $id)

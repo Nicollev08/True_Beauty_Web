@@ -14,6 +14,8 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Traits\HasRoles;
 
+use App\Models\SocialProfile;
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -65,22 +67,43 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function adminlte_image(){
-        return 'https://picsum.photos/300/300';
+
+    public function adminlte_image()
+    {
+        $social_profile = $this->socialProfiles->first();
+
+        if ($social_profile) {
+            return $social_profile->social_avatar;
+        } else {
+            return 'https://picsum.photos/300/300';
+        }
     }
-    
-    public function adminlte_desc(){
+
+    public function adminlte_desc()
+    {
         return "Administrador";
     }
 
     public function adminlte_profile_url()
     {
-        return 'profile/username';
+        return route('profile.show');
     }
+
     public function scopeSearch($query, $search)
     {
         return $query->where('name', 'LIKE', '%' . $search . '%')
-                     ->orWhere('email', 'LIKE', '%' . $search . '%');
+            ->orWhere('email', 'LIKE', '%' . $search . '%');
+    }
+
+    //UNO A MUCHOS
+    public function socialProfiles()
+    {
+        return $this->hasMany(SocialProfile::class);
+    }
+
+    //Relacion uno a muchos
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 
 

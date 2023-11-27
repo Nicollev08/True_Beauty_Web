@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Evento>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Image>
  */
-class EventoFactory extends Factory
+class ImageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class EventoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'url' => 'products_images/'. $this->faker->image('public/storage/products_images', 640, 480, null, false)
         ];
     }
 }

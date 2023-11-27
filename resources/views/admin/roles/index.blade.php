@@ -3,18 +3,22 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <a class="btn btn-secondary btn-sm float-right" href="{{ route('admin.roles.create') }}">Nuevo rol</a>
-    <h1>Lista de roles</h1>
+
+    @can('admin.roles.create')
+        <a class="btn btn-secondary btn-sm float-right" href="{{ route('admin.roles.create') }}">Nuevo rol</a>
+    @endcan
+
+    <h1>Lista de Roles</h1>
 @stop
 
 @section('content')
 
-    @if(session('info'))
+    @if (session('info'))
         <div class="alert alert-success">
-            <strong>{{(session('info'))}}</strong>
+            <strong>{{ session('info') }}</strong>
         </div>
     @endif
-    
+
     <div class="card">
         <div class="card-body">
             <table class="table table-striped">

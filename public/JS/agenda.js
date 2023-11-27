@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
       formulario.reset();
 
       formulario.start.value = info.dateStr
-      formulario.end.value   = info.dateStr
 
       $("#evento").modal("show");
     },
@@ -46,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
           formulario.title.value       = respuesta.data.title;
           formulario.descripcion.value = respuesta.data.descripcion;
           formulario.start.value       = respuesta.data.start;
-          formulario.end.value         = respuesta.data.end;
 
           $("#evento").modal("show");
 

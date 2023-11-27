@@ -8,7 +8,6 @@ use Livewire\WithPagination;
 
 class UsersIndex extends Component
 {
-
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap'; 

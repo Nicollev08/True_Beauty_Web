@@ -27,7 +27,6 @@ class EventoController extends Controller
             'title'       => $request->title,
             'descripcion' => $request->descripcion,
             'start'       => $request->start,
-            'end'         => $request->end,
             'userId'      => Auth::user()->id
         ]);
     }
@@ -53,8 +52,6 @@ class EventoController extends Controller
 
         $evento->start = Carbon::createFromFormat('Y-m-d H:i:s', $evento->start)->format('Y-m-d');
 
-        $evento->end = Carbon::createFromFormat('Y-m-d H:i:s', $evento->end)->format('Y-m-d');
-
 
         return response()->json($evento, 200);
     }
@@ -69,7 +66,6 @@ class EventoController extends Controller
             'title'       => $request->title,
             'descripcion' => $request->descripcion,
             'start'       => $request->start,
-            'end'         => $request->end,
             'userId'      => Auth::user()->id
         ]);
         return response()->json($evento);
