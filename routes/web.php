@@ -15,7 +15,7 @@ use App\Livewire\Comments;
 use App\Livewire\ShoppingCart;
 use App\Livewire\CreateOrder;
 use App\Livewire\PaymentOrder;
-
+use App\Livewire\Services;
 
 Route::get('/', WelcomeController::class)->name('/');
 
@@ -73,6 +73,8 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/eventos/eliminar/{id}', [EventoController::class, 'destroy']);
 
 });
+
+Route::get('services', [Services::class, 'render'])->name('view-services');
 
 ///LOGIN FACEBOOK Y GOOGLE
 Route::get('/auth/{driver}/redirect', [AuthController::class, 'redirect']);
