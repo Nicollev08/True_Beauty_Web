@@ -1,62 +1,44 @@
 <x-app-layout>
-    <!-- SERVICES SECTION -->
-    <section class="servicios" id="servicios">
-        <div class="servicecontent">
-            <div class="row">
-                <div class="section__title2">
-                    <h1>SERVICIOS</h1>
-                    <span></span>
-                </div>
-            </div>
-            <div class="services">
-                @foreach ($data as $item)
-                    <div>
-                        <div class=""><img src="{{ asset('image') }}" alt="Image"></div>
 
-                        <div class="services__texts">
-                            <h2 class="services__title">{{ $item->name }}</h2>
-                            <p class="services__paragraph">{{ $item->description }}</p>
+
+
+    <div class="bg-white">
+        <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          
+          <h1>Servicios</h1>
+          
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mt-5">Más de nuestros servicios</h2>
+
+
+            <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+
+                @foreach ($services as $service)
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <img src="{{ asset('storage/' . $service->image) }}"
+                                alt="Image not available"
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        {{$service->name}}
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">Descripción: {{$service->description}}</p>
+                                <p class="mt-1 text-sm text-gray-500">Duración: {{$service->duration}}</p>
+
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$35</p>
                         </div>
                     </div>
                 @endforeach
-                <div class="services__image service__image--2"></div>
-
-                <div class="services__texts services__texts--2">
-                    <h2 class="services__title"> PESTAÑAS</h2>
-                    <p class="services__paragraph"> Potencia tu mirada con nuestras extensiones de pestañas. 🌟
-                        Resalta tu belleza natural con pestañas largas y exuberantes.
-                        ¡Haz que tus ojos brillen con cada parpadeo! Reserva tu cita para una mirada
-                        cautivadora. ✨
-                    </p>
-                </div>
-
-                <div class="services__image service__image--3" id="imgservice"></div>
-
-                <div class="services__texts services__texts--3">
-                    <h2 class="services__title" id="nameservice"> CUIDADO FACIAL</h2>
-                    <p class="services__paragraph" id="descripcionservice"> Regálate un momento de lujo para
-                        tu
-                        piel. ✨
-                        Descubre la pureza y frescura con nuestros tratamientos de cuidado facial.
-                        Deja que tu piel respire y brille con una limpieza profunda.
-                        Reserva tu sesión para revitalizar tu piel y resaltar tu belleza natural. 💆‍♀️✨</p>
-                </div>
-
-                <div class="services__image service__image--4"></div>
-
-                <div class="services__texts services__texts--4">
-                    <h2 class="services__title"> MAQUILLAJE</h2>
-                    <p class="services__paragraph"> ¡Resalta tu belleza con nuestro arte del maquillaje! 💄
-                        Descubre looks irresistibles y radiantes que resaltan lo mejor de ti.
-                        Desde maquillaje natural hasta looks audaces, estamos aquí para realzar tu confianza.
-                        Reserva tu sesión y déjanos crear magia en tu rostro. ✨ </p>
-                </div>
-
             </div>
-            <a href="/" class="opbtn1">REGRESAR</a>
         </div>
+    </div>
 
-
-
-    </section>
 </x-app-layout>

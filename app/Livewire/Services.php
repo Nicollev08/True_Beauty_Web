@@ -17,7 +17,7 @@ class Services extends Component
 
     public function render()
     {
-        $data = Service::all();
-        return view('livewire.services', compact('data'));
+        $services = Service::all();
+        return view('livewire.services', compact('services'));
     }
 }
