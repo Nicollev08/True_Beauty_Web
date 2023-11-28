@@ -31,7 +31,7 @@
             </div>
 
             <div class="col-md-3">
-                <a href="{{ route('admin.orders.index') . '?status=4' }}" class="btn btn-danger btn-block mb-4">
+                <a href="{{ route('admin.orders.index') . '?status=4' }}" class="btn btn-success btn-block mb-4">
                     <p class="text-center h2">{{ $entregado }}</p>
                     <p class="text-center text-uppercase">Entregado</p>
                     <p class="text-center h2 mt-2">
@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-md-3">
-                <a href="{{ route('admin.orders.index') . '?status=5' }}" class="btn btn-success btn-block mb-4">
+                <a href="{{ route('admin.orders.index') . '?status=5' }}" class="btn btn-danger btn-block mb-4">
                     <p class="text-center h2">{{ $anulado }}</p>
                     <p class="text-center text-uppercase">Anulado</p>
                     <p class="text-center h2 mt-2">
@@ -140,7 +140,7 @@
             <div class="card mt-4">
                 <div class="card-body">
                     <h2 class="card-title mb-4">Pedidos recientes</h2>
-                    <span class="font-weight-bold text-lg">
+                    <span class="font-weight-bold text-lg p-4">
                         No existen registros de órdenes
                     </span>
                 </div>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PDF CATEGORIA</title>
+    <title>PDF SUBCATEGORIAS</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -24,9 +24,9 @@
         <div class="text-logo">
             <p>TRUE BEAUTY</p>
         </div>
-        <h1 class="text-center">CATEGORIAS</h1>
+        <h1 class="text-center">SUBCATEGORÍAS</h1>
     </div>
-    
+
     <div class="container">
 
         <div class="content-container">
@@ -36,23 +36,24 @@
                     <tr>
                         <th>ID</th>
                         <th>NOMBRE</th>
+                        <th>CATEGORÍA</th>
                     </tr>
                 </thead>
 
-                @if ($categories->count())
+                @if ($subcategories->count())
 
                     <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($subcategories as $subcategory)
                             <tr>
-                                <td>{{ $category->id }}</td>
-                                <td>{{ $category->name }}</td>
-
+                                <td>{{ $subcategory->id }}</td>
+                                <td>{{ $subcategory->name }}</td>
+                                <td>{{ $subcategory->category->name }}</td>
                             </tr>
                         @endforeach
                     </tbody>
                 @else
                     <div>
-                        No hay categorías registradas
+                        No hay categorias registradas
                     </div>
 
                 @endif

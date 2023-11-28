@@ -9,7 +9,6 @@ use App\Models\Category;
 
 
 use Barryvdh\DomPDF\Facade\Pdf;
-use Dompdf\Dompdf;
 use Maatwebsite\Excel\Facades\Excel;
 
 class CategoryController extends Controller
@@ -23,7 +22,7 @@ class CategoryController extends Controller
     public function pdf()
     {
         $categories = Category::all();
-        $pdf = Pdf::loadView('admin.categories.pdf', compact('categories'));
+        $pdf = PDF::loadView('admin.categories.pdf', compact('categories'));
         return $pdf->stream();
     }
 

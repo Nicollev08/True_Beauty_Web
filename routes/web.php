@@ -10,13 +10,14 @@ use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
-
+use App\Http\Controllers\CommentController;
+use App\Livewire\Comments;
 use App\Livewire\ShoppingCart;
 use App\Livewire\CreateOrder;
 use App\Livewire\PaymentOrder;
 
 
-Route::get('/', WelcomeController::class);
+Route::get('/', WelcomeController::class)->name('/');
 
 // Route::get("/", function () {
 //     return view("welcome");
@@ -56,6 +57,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 
 
+    Route::resource('comments', CommentController::class)->only('store','update', 'destroy')->names('comments');
+    Route::get('comments', Comments::class);
 
     /////AGENDA
 

@@ -288,8 +288,8 @@
 
 
 
-            <!-- TESTIMONIALS SECTION -->
-            <section class="testimonials section centered" id="testimonios">
+            <section>
+
                 <div class="row">
                     <div class="section__title2">
                         <h1>TESTIMONIOS</h1>
@@ -297,90 +297,10 @@
                     </div>
                 </div>
 
-                <div class="testimonials__content">
-
-                    <div class="testimonials__card container grid">
-                        <div class="testimonials__item flex">
-                            <div class="testimonials__img">
-                                <img src="/IMG/mujer1.jpg" alt="">
-                            </div>
-                            <div class="testimonials__box">
-                                <div class="testimonials__name">
-                                    <h1>Julieta</h1>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                </div>
-                                <div class="testimonials__descripition">
-                                    <p>"Poseen tratamientos de alta calidad.
-                                        Una experiencia de belleza y relajación inigualable."</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonials__item flex">
-                            <div class="testimonials__img">
-                                <img src="/IMG/hombre1.jpg" alt="">
-                            </div>
-                            <div class="testimonials__box">
-                                <div class="testimonials__name">
-                                    <h1>Marcus</h1>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                </div>
-                                <div class="testimonials__descripition">
-                                    <p>"El centro de belleza es simplemente encantador,
-                                        ¡Una experiencia que siempre deja una impresión positiva!"</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonials__item flex">
-                            <div class="testimonials__img">
-                                <img src="/IMG/hombre2.jpg" alt="">
-                            </div>
-                            <div class="testimonials__box">
-                                <div class="testimonials__name">
-                                    <h1>Samuel</h1>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                </div>
-                                <div class="testimonials__descripition">
-                                    <p>"Este centro de belleza es un oasis de elegancia y cuidado.
-                                        Ideal para quienes buscan lo mejor en cuidado y bienestar."</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonials__item flex">
-                            <div class="testimonials__img">
-                                <img src="/IMG/mujer2.jpg" alt="">
-                            </div>
-                            <div class="testimonials__box">
-                                <div class="testimonials__name">
-                                    <h1>Vero</h1>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                    <i class='bx bxs-star star__icon'></i>
-                                </div>
-                                <div class="testimonials__descripition">
-                                    <p>"En un destino ideal para consentirse. Lo amé mucho
-                                        ¡Una joya en el mundo del bienestar!"</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="/opiniones"class="opbtn">VER MÁS</a>
-                </div>
-
+                @livewire('comments')
+                
             </section>
+
         </main>
 
         <!--GOOGLE MAPS-->

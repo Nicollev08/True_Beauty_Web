@@ -175,6 +175,7 @@ return [
         
 
         Laravel\Socialite\SocialiteServiceProvider::class,
+        
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
         
     ])->toArray(),
@@ -194,6 +195,8 @@ return [
         // 'Example' => App\Facades\Example::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'PDF ' =>  Barryvdh\DomPDF\ServiceProvider::class,
+        
     ])->toArray(),
 
 ];

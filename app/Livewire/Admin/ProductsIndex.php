@@ -17,6 +17,7 @@ class ProductsIndex extends Component
     public function updatingSearch(){
         $this->resetPage();
     }
+    
  
     public function render()
     {

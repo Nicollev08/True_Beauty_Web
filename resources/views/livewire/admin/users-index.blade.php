@@ -6,13 +6,19 @@
         </div>
     @endif
 
+    {{-- GENERAR REPORTES --}}
+    <a href="{{ route('admin.users.pdf') }}" class="btn btn-danger" target="_blank" title="Ver Pdf"><i
+            class="fa-solid fa-file-pdf fa-lg" style="color: #ffffff;"></i></a>
+    <a href="{{ route('admin.users.excel') }}" class="btn btn-success" target="_blank" title="Ver Excel"><i
+            class="fa-solid fa-file-excel fa-lg" style="color: #ffffff;"></i></a>
+
+
     <div class="card">
 
         <div class="card-header">
             <input type="text" wire:model.live="search" class="form-control"
                 placeholder="Ingrese el nombre o correo del usuario">
         </div>
-
 
         <div class="card-body">
 

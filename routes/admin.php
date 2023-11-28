@@ -27,6 +27,21 @@ Route::get('', [HomeController::class, 'index'])->middleware('can:admin.home')->
 Route::get('categories/pdf', [CategoryController::class, 'pdf'])->name('admin.categories.pdf');
 Route::get('categories/excel', [CategoryController::class, 'excel'])->name('admin.categories.excel');
 
+Route::get('products/pdf', [ProductController::class, 'pdf'])->name('admin.products.pdf');
+Route::get('products/excel', [ProductController::class, 'excel'])->name('admin.products.excel');
+
+Route::get('tips/pdf', [TipController::class, 'pdf'])->name('admin.tips.pdf');
+Route::get('tips/excel', [TipController::class, 'excel'])->name('admin.tips.excel');
+
+Route::get('subcategories/pdf', [SubcategoryController::class, 'pdf'])->name('admin.subcategories.pdf');
+Route::get('subcategories/excel', [SubcategoryController::class, 'excel'])->name('admin.subcategories.excel');
+
+Route::get('services/pdf', [ServiceController::class, 'pdf'])->name('admin.services.pdf');
+Route::get('services/excel', [ServiceController::class, 'excel'])->name('admin.services.excel');
+
+Route::get('users/pdf', [UserController::class, 'pdf'])->name('admin.users.pdf');
+Route::get('users/excel', [UserController::class, 'excel'])->name('admin.users.excel');
+
 
 
 Route::resource('users', UserController::class)->except('show')->names('admin.users');

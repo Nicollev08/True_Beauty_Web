@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\ServicesExport;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ServiceController extends Controller
 {
@@ -20,6 +24,28 @@ class ServiceController extends Controller
     {
         $services = Service::all();
         return view('admin.services.index', compact('services'));
+    }
+
+    public function pdf()
+    {
+        $services = Service::all();
+
+        foreach ($services as $service) {
+            $service->image = Storage::url($service->image);
+        }
+
+        $pdf = PDF::loadView('admin.services.pdf', compact('services'));
+        $pdf->getDomPDF()->set_option("isHtml5ParserEnabled", true);
+        $pdf->getDomPDF()->set_option("isPhpEnabled", true);
+        
+        
+        return $pdf->stream();
+    }
+
+
+    public function excel()
+    {
+        return Excel::download(new ServicesExport, 'services.xlsx');
     }
 
     public function create()

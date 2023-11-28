@@ -67,6 +67,23 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    //Relacion uno a muchos
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function events(): HasMany
+    {
+        return $this->hasMany(Evento::class, 'userId', 'id');
+    }
+
+    //UNO A MUCHOS
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 
     public function adminlte_image()
     {
@@ -100,16 +117,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(SocialProfile::class);
     }
-
-    //Relacion uno a muchos
-    public function orders(){
-        return $this->hasMany(Order::class);
-    }
-
-
-    public function events(): HasMany
-    {
-        return $this->hasMany(Evento::class, 'userId', 'id');
-    }
-
 }
