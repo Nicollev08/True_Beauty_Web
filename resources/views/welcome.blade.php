@@ -221,7 +221,7 @@
                                 Descubre la magia de nuestras manicuras profesionales.
                                 Colores vibrantes, diseños elegantes y un cuidado impecable para tus uñas.
                                 Reserva tu cita y deja que tus manos hablen por ti. </p>
-                            <a href="#" class="services__cta">Ver más</a>
+                            <a href="{{route('view-services')}}" class="services__cta">Ver más</a>
                         </div>
 
                         <div class="services__image service__image--2"></div>
@@ -233,7 +233,7 @@
                                 ¡Haz que tus ojos brillen con cada parpadeo! Reserva tu cita para una mirada
                                 cautivadora. ✨
                             </p>
-                            <a href="#" class="services__cta">Ver más</a>
+                            <a href="{{route('view-services')}}" class="services__cta">Ver más</a>
                         </div>
 
                         <div class="services__image service__image--3" id="imgservice"></div>
@@ -246,7 +246,7 @@
                                 Descubre la pureza y frescura con nuestros tratamientos de cuidado facial.
                                 Deja que tu piel respire y brille con una limpieza profunda.
                                 Reserva tu sesión para revitalizar tu piel y resaltar tu belleza natural. 💆‍♀️✨</p>
-                            <a href="#" class="services__cta">Ver más</a>
+                            <a href="{{route('view-services')}}" class="services__cta">Ver más</a>
                         </div>
 
                         <div class="services__image service__image--4"></div>
@@ -257,11 +257,11 @@
                                 Descubre looks irresistibles y radiantes que resaltan lo mejor de ti.
                                 Desde maquillaje natural hasta looks audaces, estamos aquí para realzar tu confianza.
                                 Reserva tu sesión y déjanos crear magia en tu rostro. ✨ </p>
-                            <a href="#" class="services__cta">Ver más</a>
+                            <a href="{{route('view-services')}}" class="services__cta">Ver más</a>
                         </div>
 
                     </div>
-                    <a href="/services"class="opbtn1">VER MÁS</a>
+                    <a href="{{route('view-services')}}" class="opbtn1">VER MÁS</a>
                 </div>
 
             </section>
