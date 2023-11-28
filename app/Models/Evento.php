@@ -14,7 +14,6 @@ class Evento extends Model
         'title'       => 'required',
         'descripcion' => 'required',
         'start'       => 'required',
-        'end'         => 'required',
     ];
 
 
@@ -22,7 +21,6 @@ class Evento extends Model
         'title',
         'descripcion',
         'start',
-        'end',
         'userId'
     ];
 

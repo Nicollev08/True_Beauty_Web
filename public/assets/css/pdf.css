@@ -1,0 +1,36 @@
+.cabecera {
+    background-color: #b42473;
+    color: white;
+}
+.text-logo{
+    font-family: 'Times New Roman', Times, serif;
+}
+#header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#header img,
+#header .text-logo {
+    display: inline-block; 
+    vertical-align: middle;
+}
+
+#header .text-logo {
+    margin-left: 10px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(252, 189, 235);
+}
+
+.textFooter {
+    text-align: center;
+    width: 100%;
+}

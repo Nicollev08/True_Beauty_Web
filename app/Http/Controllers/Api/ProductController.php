@@ -12,7 +12,6 @@ class ProductController extends Controller
     {
         $products = Product::all();
         return response()->json($products);
-        //nicol
     }
     
     public function store(Request $request)
@@ -20,14 +19,12 @@ class ProductController extends Controller
     $product = Product::create($request->all());
     return response()->json([
         'producto' => $product,
-        'mensaje' => "Producto creado correctamente"
     ]);
 }
 
     public function show(Product $product)
     {
         return response()->json([
-            'respuesta'=>true,
             'producto'=>$product
         ]);
     }
