@@ -33,7 +33,6 @@
                                 <p class="mt-1 text-sm text-gray-500">Duración: {{$service->duration}}</p>
 
                             </div>
-                            <p class="text-sm font-medium text-gray-900">$35</p>
                         </div>
                     </div>
                 @endforeach

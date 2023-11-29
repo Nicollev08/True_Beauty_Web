@@ -1,23 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Gelasio&display=swap&family=Montserrat:wght@300;400;700;800&display=swap');
+@charset "UTF-8";
 
-/* TESTIMONIALS */
+/* Estilos generales */
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.modal {
-  display: none;
-  position: fixed; /* Cambiado de 'center' a 'fixed' */
-  top: 0;
-  left: 0;
+.modal-content input[type=text],
+.modal-content input[type=hidden],
+.modal-content textarea {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.modal-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.plain-input {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.imagh {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+/* Estilos para la línea horizontal */
+.line {
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.titl {
+  font-size: 20px;
+  text-align: center;
+}
+
+.modal-content .star-rating{
   align-items: center;
-  z-index: 1000;
+  justify-content: center;
+}
+
+/* ... Otros estilos ... */
+.star-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2.5em; /* Aumenta el tamaño de las estrellas */
+  padding: 0.2em;
+  cursor: pointer;
+  color: #ccc;
+  margin-left: 5px; /* Ajusta el espacio entre las estrellas según tus necesidades */
+}
+
+.star-rating label:before {
+  content: "★"; /* Unicode character for a star */
+}
+
+.star-rating input:checked ~ label {
+  color: #ffdd00; /* Color de la estrella cuando está seleccionada */
 }
 
 
 .modal-content.centered {
   background-color: #fff;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 20px;
   border-radius: 8px;
@@ -28,21 +99,15 @@
 }
 
 
-.close-btn {
-  cursor: pointer;
-  background-color: #f44336;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-.centered {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+
   .testimonials__container {
     display: flex;
     flex-wrap: wrap;
@@ -79,7 +144,7 @@
 
 .credentials {
   display: flex;
-  align-items: center; /* Para alinear verticalmente la imagen y el nombre del usuario */
+  align-items: center;
 }
 
 .user-info h1 {
@@ -109,12 +174,11 @@
     z-index: var(--z-tooltip);
 }
 
-
-
-.testimonials__descripition p{
-    line-height: var(--h2-font-size);
-    margin-top: var(--mb-2);
+.testimonials__description p {
+  line-height: var(--h2-font-size);
+  margin-top: var(--mb-2);
 }
+
 
 .acciones{
   display: flex;
@@ -122,6 +186,7 @@
   justify-items: center;
   justify-content: center;
 }
+
 
 .opbtn {
     color: white;

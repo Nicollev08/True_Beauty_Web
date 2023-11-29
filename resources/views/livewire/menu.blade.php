@@ -14,7 +14,7 @@
         <a class="names" style="text-decoration:none" href="{{ url('/') }}#tips">Tips</a>
         <a class="names" style="text-decoration:none" href="{{ url('/') }}#servicios">Servicios</a>
         <a class="names" style="text-decoration:none" href="{{ url('/') }}#products">Productos</a>
-        <a class="names" style="text-decoration:none" href="eventos">Agenda</a>
+        <a class="names" style="text-decoration:none" href="{{ url('/eventos') }}">Agenda</a>
         <a class="names" style="text-decoration:none" href="{{ url('/') }}#redes">Redes</a>
 
         @guest
