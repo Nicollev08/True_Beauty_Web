@@ -176,7 +176,8 @@ return [
 
         Laravel\Socialite\SocialiteServiceProvider::class,
         
-        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         
     ])->toArray(),
 
@@ -196,6 +197,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'PDF ' =>  Barryvdh\DomPDF\ServiceProvider::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
         
     ])->toArray(),
 

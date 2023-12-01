@@ -1,18 +1,21 @@
 <?php
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\TipController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\AgendaController;
+use App\Http\Controllers\Api\ServiceController;
 
 
 // //PRODUCTOS
 // Route::get('/products', [ProductController::class, 'index']);
 // Route::post('/products', [ProductController::class, 'store']);
-// Route::get('/products/{product}', [ProductController::class, 'show']);
-// Route::put('/products/{product}', [ProductController::class, 'update']);
-// Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+// Route::get('/products/{id}', [ProductController::class, 'show']);
+// Route::put('/products/{products}', [ProductController::class, 'update']);
+// Route::delete('/products/{products}', [ProductController::class, 'destroy']);
 
 // //TIPS
 // Route::get('/tips', [TipController::class, 'index']);
@@ -38,6 +41,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('users', UserController::class)->names('usuarios');
 Route::apiResource('products', ProductController::class)->names('productos');
 Route::apiResource('tips', TipController::class)->names('belleza');
+Route::apiResource('services', ServiceController::class)->names('servicios');
+Route::apiResource('agendas', AgendaController::class)->names('servicius');
 
 Route::controller(UserController::class)->group(function () {
     Route::post('/login', 'login');

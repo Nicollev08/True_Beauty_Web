@@ -25,19 +25,3 @@ class Product extends Model
         return $query->where('name', 'LIKE', '%' . $search . '%');
     }
 }
-
-
-    // //UNO A MUCHOS INVERSA
-    // public function brand(){
-    //     return $this->belongsTo(Brand::class);
-    // }
-
-    // //MUCHOS A MUCHOS 
-    // public function colors(){
-    //     return $this->belongsToMany(Color::class);
-    // }
-
-    // //uno a muchos polimorfica
-    // public function images(){  
-    //     return $this->morphMany(Image::class, "imageable");
-    // }
