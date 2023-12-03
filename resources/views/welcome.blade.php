@@ -45,6 +45,7 @@
                                 <p>Si quieres un maquillaje perfecto, pasa un hielo de zumo de pepino con sábila por el
                                     rostro y el cuello.
                                     Esto dejará la piel tersa para poder poner cualquier producto de belleza.</p>
+                                <a href="{{ route('view-tips') }}" class="services__cta">Ver más</a>
                             </div>
                         </div>
                         <div class="tip">
@@ -57,6 +58,7 @@
                                     cabello
                                     no produce el frizz que producen las cerdas plásticas. Además, la grasa natural del
                                     cabello se distribuye de manera uniforme por toda la cabellera.</p>
+                                <a href="{{ route('view-tips') }}" class="services__cta">Ver más</a>
                             </div>
                         </div>
                         <div class="tip">
@@ -69,6 +71,7 @@
                                     tratamientos anticaída, también debes enjuaga tu pelo después del lavado con agua
                                     fría,
                                     sobre todo si tu pelo es fino. El agua fría promueve más el brillo una vez secado.
+                                    <a href="{{ route('view-tips') }}" class="services__cta">Ver más</a>
                                 </p>
                             </div>
                         </div>
@@ -85,6 +88,7 @@
                                     dormir
                                     un largo tiempo. Envuelve un trozo de hielo con una toalla y ponlo sobre el área
                                     inflamada de los ojos. En unos minutos comenzará a reducirse el tamaño.</p>
+                                <a href="{{ route('view-tips') }}" class="services__cta">Ver más</a>
                             </div>
                         </div>
                         <div class="tip">
@@ -97,6 +101,7 @@
                                     impide lavar el cabello con tiempo. Si es tu caso, aplica un poco de talco a las
                                     cerdas
                                     de tu cepillo y péinalo hasta quitar el exceso.</p>
+                                <a href="{{ route('view-tips') }}" class="services__cta">Ver más</a>
                             </div>
                         </div>
                         <div class="tip">
@@ -110,11 +115,12 @@
                                     Aplica limón antes de dormir, tus uñas estarán siempre limpias y fuertes para los
                                     días
                                     en que prefieras lucirlas al natural.</p>
+                                <a href="{{ route('view-tips') }}" class="services__cta">Ver más</a>
                             </div>
                         </div>
 
                     </div>
-                    <a href="/tips"class="opbtn1">VER MÁS</a>
+                    <a href="{{ route('view-tips') }}" class="services__cta">Ver más</a>
                 </div>
 
             </section>
@@ -221,7 +227,7 @@
                                 Descubre la magia de nuestras manicuras profesionales.
                                 Colores vibrantes, diseños elegantes y un cuidado impecable para tus uñas.
                                 Reserva tu cita y deja que tus manos hablen por ti. </p>
-                            <a href="{{route('view-services')}}" class="services__cta">Ver más</a>
+                            <a href="{{ route('view-services') }}" class="services__cta">Ver más</a>
                         </div>
 
                         <div class="services__image service__image--2"></div>
@@ -233,7 +239,7 @@
                                 ¡Haz que tus ojos brillen con cada parpadeo! Reserva tu cita para una mirada
                                 cautivadora. ✨
                             </p>
-                            <a href="{{route('view-services')}}" class="services__cta">Ver más</a>
+                            <a href="{{ route('view-services') }}" class="services__cta">Ver más</a>
                         </div>
 
                         <div class="services__image service__image--3" id="imgservice"></div>
@@ -246,7 +252,7 @@
                                 Descubre la pureza y frescura con nuestros tratamientos de cuidado facial.
                                 Deja que tu piel respire y brille con una limpieza profunda.
                                 Reserva tu sesión para revitalizar tu piel y resaltar tu belleza natural. 💆‍♀️✨</p>
-                            <a href="{{route('view-services')}}" class="services__cta">Ver más</a>
+                            <a href="{{ route('view-services') }}" class="services__cta">Ver más</a>
                         </div>
 
                         <div class="services__image service__image--4"></div>
@@ -257,11 +263,11 @@
                                 Descubre looks irresistibles y radiantes que resaltan lo mejor de ti.
                                 Desde maquillaje natural hasta looks audaces, estamos aquí para realzar tu confianza.
                                 Reserva tu sesión y déjanos crear magia en tu rostro. ✨ </p>
-                            <a href="{{route('view-services')}}" class="services__cta">Ver más</a>
+                            <a href="{{ route('view-services') }}" class="services__cta">Ver más</a>
                         </div>
 
                     </div>
-                    <a href="{{route('view-services')}}" class="opbtn1">VER MÁS</a>
+                    <a href="{{ route('view-services') }}" class="opbtn1">VER MÁS</a>
                 </div>
 
             </section>
@@ -298,7 +304,7 @@
                 </div>
 
                 @livewire('comments')
-                
+
             </section>
 
         </main>
