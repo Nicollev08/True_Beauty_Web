@@ -19,6 +19,7 @@ use App\Livewire\ShoppingCart;
 use App\Livewire\CreateOrder;
 use App\Livewire\PaymentOrder;
 use App\Livewire\Services;
+use App\Livewire\Tips;
 
 Route::get('/', WelcomeController::class)->name('/');
 
@@ -81,6 +82,8 @@ Route::middleware(['auth'])->group(function(){
 });
 
 Route::get('services', [Services::class, 'render'])->name('view-services');
+
+Route::get('tips', [Tips::class, 'render'])->name('view-tips');
 
 ///LOGIN FACEBOOK Y GOOGLE
 Route::get('/auth/{driver}/redirect', [AuthController::class, 'redirect']);
