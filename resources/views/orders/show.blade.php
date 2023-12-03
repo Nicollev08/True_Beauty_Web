@@ -6,7 +6,8 @@
         <div class="bg-white rounded-lg shadow-lg px-12 py-8 mb-6 flex items-center">
 
             <div class="relative">
-                <div class="{{ ($order->status >= 2 && $order->status != 5) ? 'bg-blue-400' : 'bg-gray-400' }}  rounded-full h-12 w-12 flex items-center justify-center">
+                <div
+                    class="{{ $order->status >= 2 && $order->status != 5 ? 'bg-pink-400' : 'bg-gray-400' }}  rounded-full h-12 w-12 flex items-center justify-center">
                     <i class="fas fa-check text-white"></i>
                 </div>
 
@@ -15,10 +16,13 @@
                 </div>
             </div>
 
-            <div class="{{ ($order->status >= 3 && $order->status != 5) ? 'bg-blue-400' : 'bg-gray-400' }} h-1 flex-1 mx-2"></div>
+            <div
+                class="{{ $order->status >= 3 && $order->status != 5 ? 'bg-pink-400' : 'bg-gray-400' }} h-1 flex-1 mx-2">
+            </div>
 
             <div class="relative">
-                <div class="{{ ($order->status >= 3 && $order->status != 5) ? 'bg-blue-400' : 'bg-gray-400' }} rounded-full h-12 w-12 flex items-center justify-center">
+                <div
+                    class="{{ $order->status >= 3 && $order->status != 5 ? 'bg-pink-400' : 'bg-gray-400' }} rounded-full h-12 w-12 flex items-center justify-center">
                     <i class="fas fa-truck text-white"></i>
                 </div>
 
@@ -27,10 +31,13 @@
                 </div>
             </div>
 
-            <div class="{{ ($order->status >= 4 && $order->status != 5) ? 'bg-blue-400' : 'bg-gray-400' }} h-1 flex-1 mx-2"></div>
+            <div
+                class="{{ $order->status >= 4 && $order->status != 5 ? 'bg-pink-400' : 'bg-gray-400' }} h-1 flex-1 mx-2">
+            </div>
 
             <div class="relative">
-                <div class="{{ ($order->status >= 4 && $order->status != 5) ? 'bg-blue-400' : 'bg-gray-400' }} rounded-full h-12 w-12 flex items-center justify-center">
+                <div
+                    class="{{ $order->status >= 4 && $order->status != 5 ? 'bg-pink-400' : 'bg-gray-400' }} rounded-full h-12 w-12 flex items-center justify-center">
                     <i class="fas fa-check text-white"></i>
                 </div>
 
@@ -49,11 +56,9 @@
                 Orden-{{ $order->id }}</p>
 
             @if ($order->status == 1)
-            
-                <x-button-enlace class="ml-auto" href="{{route('orders.payment', $order)}}">
+                <x-button-enlace class="ml-auto" href="{{ route('orders.payment', $order) }}">
                     Ir a pagar
                 </x-button-enlace>
-
             @endif
         </div>
 
@@ -80,8 +85,18 @@
 
                     <p class="text-sm">Persona que recibirá el producto: {{ $order->contact }}</p>
                     <p class="text-sm">Teléfono de contacto: {{ $order->phone }}</p>
+
                 </div>
+
+                @if ($order->status != 1)
+                    <div>
+                        <a href="{{ route('users.orders.pdf', ['orderId' => $orderId]) }}" class="btn bg-pink-400" target="_blank"
+                            title="Ver Pdf"><i class="fa-solid fa-file-pdf fa-lg" style="color: #ffffff;"></i></a>
+                    </div>
+                @endif
+
             </div>
+
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 text-gray-700 mb-6">
@@ -92,17 +107,17 @@
                     <tr>
                         <th></th>
                         <th>Precio</th>
-                        <th>Cant</th>
+                        <th>Cantidad</th>
                         <th>Total</th>
                     </tr>
                 </thead>
 
                 <tbody class="divide-y divide-gray-200">
                     @foreach ($items as $item)
-                        <tr>
+                        <tr class="">
                             <td>
                                 <div class="flex justify-start">
-                                    <img class="h-15 w-20 object-cover mr-4" src="{{$item->options->image_path}}"
+                                    <img class="h-15 w-20 object-cover mr-4" src="{{ $item->options->image_path }}"
                                         alt="">
                                     <article>
                                         <h1 class="font-bold">{{ $item->name }}</h1>

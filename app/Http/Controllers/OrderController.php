@@ -35,6 +35,11 @@ class OrderController extends Controller
         $items = json_decode($order->content);
         $envio = json_decode($order->envio);
 
-        return view('orders.show', compact('order', 'items', 'envio'));
+        return view('orders.show', [
+            'order' => $order,
+            'items' => $items,
+            'envio' => $envio,
+            'orderId' => $order->id, // Agrega el orderId aquí
+        ]);
     }
 }

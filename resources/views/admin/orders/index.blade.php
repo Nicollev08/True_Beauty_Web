@@ -11,7 +11,7 @@
 
         <div class="row">
             <div class="col-md-3">
-                <a href="{{ route('admin.orders.index') . '?status=2' }}" class="btn btn-secondary btn-block mb-4">
+                <a href="{{ route('admin.orders.index') . '?status=2' }}" class="btn btn-primary btn-block mb-4">
                     <p class="text-center h2">{{ $recibido }}</p>
                     <p class="text-center text-uppercase">Recibido</p>
                     <p class="text-center h2 mt-2">
@@ -60,15 +60,15 @@
                     <ul class="list-group">
                         @foreach ($orders as $order)
                             <li class="list-group-item">
-                                <a href="{{ route('admin.orders.show', $order) }}" class="d-flex align-items-center">
+                                <a href="{{ route('admin.orders.show', $order) }}" class="d-flex align-items-center text-dark">
                                     <span class="w-12 text-center">
                                         @switch($order->status)
                                             @case(1)
-                                                <i class="fas fa-business-time text-danger opacity-50"></i>
+                                                <i class="fas fa-business-time text-secondary opacity-50"></i>
                                             @break
 
                                             @case(2)
-                                                <i class="fas fa-credit-card text-secondary opacity-50"></i>
+                                                <i class="fas fa-credit-card text-primary opacity-50"></i>
                                             @break
 
                                             @case(3)
@@ -76,11 +76,11 @@
                                             @break
 
                                             @case(4)
-                                                <i class="fas fa-check-circle text-pink opacity-50"></i>
+                                                <i class="fas fa-check-circle text-success opacity-50"></i>
                                             @break
 
                                             @case(5)
-                                                <i class="fas fa-times-circle text-success opacity-50"></i>
+                                                <i class="fas fa-times-circle text-danger opacity-50"></i>
                                             @break
 
                                             @default
@@ -123,7 +123,7 @@
                                         <br>
 
                                         <span class="text-sm">
-                                            {{ $order->total }} USD
+                                            ${{ $order->total }}
                                         </span>
                                     </div>
 

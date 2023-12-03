@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\EventoController;
 use Illuminate\Support\Facades\Route;
@@ -11,6 +12,8 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\UserController;
+
 use App\Livewire\Comments;
 use App\Livewire\ShoppingCart;
 use App\Livewire\CreateOrder;
@@ -56,7 +59,10 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 
+    //FACTURA
+    Route::get('user/order/pdf/{orderId}', [UserController::class, 'pdf'])->name('users.orders.pdf');
 
+    //COMENTARIOS
     Route::resource('comments', CommentController::class)->only('store','update', 'destroy')->names('comments');
     Route::get('comments', Comments::class);
 

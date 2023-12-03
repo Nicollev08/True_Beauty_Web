@@ -44,9 +44,9 @@ class ProductController extends Controller
     }
 
     if ($request->filled('image_path') && empty($request->file('image_path'))) {
-      $nombre = ''; // O cualquier valor predeterminado que desees
+      $nombre = ''; 
     } else {
-      $nombre = $request->input('image_path', ''); // Establecer el valor predeterminado si no está presente
+      $nombre = $request->input('image_path', ''); 
     }
 
     $sku = uniqid();

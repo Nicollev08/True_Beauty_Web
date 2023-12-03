@@ -1,5 +1,5 @@
 <div>
-    <div class="container py-36 py-10 w-full max-w-screen mx-auto">
+    <div class="container py-36 w-full max-w-screen mx-auto">
 
         <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-6 container py-8">
 
@@ -44,7 +44,7 @@
                             <tr>
                                 <th></th>
                                 <th>Precio</th>
-                                <th>Cant</th>
+                                <th>Cantidad</th>
                                 <th>Total</th>
                             </tr>
                         </thead>
@@ -64,7 +64,7 @@
                                     </td>
 
                                     <td class="text-center">
-                                        {{ $item->price }} USD
+                                        {{ $item->price }} $
                                     </td>
 
                                     <td class="text-center">
