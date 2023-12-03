@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+/* Estilos generales */
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content input[type=text],
+.modal-content input[type=hidden],
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.modal-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.plain-input {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.imagh {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+/* Estilos para la línea horizontal */
+.line {
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.titl {
+  font-size: 20px;
+  text-align: center;
+}
+
+.modal-content .star-rating{
+  align-items: center;
+  justify-content: center;
+}
+
+/* ... Otros estilos ... */
+.star-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2.5em; /* Aumenta el tamaño de las estrellas */
+  padding: 0.2em;
+  cursor: pointer;
+  color: #ccc;
+  margin-left: 5px; /* Ajusta el espacio entre las estrellas según tus necesidades */
+}
+
+.star-rating label:before {
+  content: "★"; /* Unicode character for a star */
+}
+
+.star-rating input:checked ~ label {
+  color: #ffdd00; /* Color de la estrella cuando está seleccionada */
+}
+
+
+.modal-content.centered {
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+  .testimonials__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Puedes ajustar según tus necesidades */
+    padding: 15px;
+}
+  
+  .testimonials__content {
+    padding: 0.5rem;
+  }
+  .testimonials .row{
+    top: -50px;
+    position: relative;
+  }
+  .testimonials__card {
+    width: 300px;
+    grid-template-columns: 1fr;
+  }
+.testimonials__item{
+    flex-direction: column;
+    margin-bottom: var(--mb-1);
+    position: relative;
+}
+.testimonials__item::after{
+    content: "";
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--rosa-color);
+    border-radius: 30px;
+}
+
+.credentials {
+  display: flex;
+  align-items: center;
+}
+
+.user-info h1 {
+  color: var(--black-color);
+  z-index: var(--Z-fixed);
+}
+
+.testimonials__img img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    transition: all 0.8s ease;
+    z-index: var(--Z-fixed);
+}
+.testimonials__item:hover .testimonials__img img {
+  transform: translateX(190px) rotate(360deg);
+}
+
+
+.testimonials__box{
+    position: relative;
+    padding: 5px;
+    z-index: var(--z-tooltip);
+}
+
+.testimonials__description p {
+  line-height: var(--h2-font-size);
+  margin-top: var(--mb-2);
+}
+
+
+.acciones{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+
+.opbtn {
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--fuccia-color);
+    border: 1px solid var(--white-color);
+    padding: 1.2rem 3rem;
+    border-radius: 1rem;
+    font-size: 14px;
+    transition: all 0.2s;
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+    top: 100px;
+  }
+  
+  .opbtn:hover {
+    transform: scale(1.1);
+    color: black;
+    background-color: #fea9c5;
+    border: 1px solid var(--fuccia-color);
+  }

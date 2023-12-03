@@ -22,6 +22,13 @@ class TipController extends Controller
             'mensaje' => "Tip creado correctamente"
         ]); 
     }
+
+    public function show(Tip $tip)
+    {
+        return response()->json([
+            'tip'=>$tip
+        ]);
+    }
   
     public function update(Request $request, Tip $tip)
     {

@@ -3,85 +3,114 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Subcategory;
+use Maatwebsite\Excel\Facades\Excel; // Agrega la importación de la clase Excel
+use Barryvdh\DomPDF\Facade\Pdf; // Agrega la importación de la clase PDF
+use App\Exports\ProductsExport; // Agrega la importación de la clase ProductsExport
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 
 class ProductController extends Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('can:admin.products.index')->only('index');
         $this->middleware('can:admin.products.create')->only('create', 'store');
         $this->middleware('can:admin.products.edit')->only('edit', 'update');
         $this->middleware('can:admin.products.destroy')->only('destroy');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $products = Product::all();
+
         return view('admin.products.index', compact('products'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function pdf()
+    {
+        $products = Product::all();
+        $pdf = PDF::loadView('admin.products.pdf', compact('products')); // Corregido: Cambiado de Pdf::loadView a PDF::loadView
+        return $pdf->stream();
+    }
+
+    public function excel()
+    {
+        return Excel::download(new ProductsExport, 'products.xlsx');
+    }
+
     public function create()
     {
-        return view('admin.products.create');
+        $products = Product::all();
+        $subcategories = Subcategory::all();
+       
+        return view('admin.products.create', compact('products', 'subcategories'));
     }
-    
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required',
-            'precio' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'description' => 'required',
+            'image_path' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'price' => 'required',
+            'status' => 'nullable',
+            'subcategory_id' => 'required'
         ]);
-    
-        $product = new Product($request->except('image'));
-    
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/products_images');
-            $product->image = 'products_images/' . basename($imagePath);
+
+        $sku = uniqid();
+
+        $request->merge(['sku' => $sku]);
+
+        $product = new Product($request->except('image_path'));
+
+        if ($request->hasFile('image_path')) {
+            $imagePath = $request->file('image_path')->store('public/products_images');
+            $product->image_path = 'products_images/' . basename($imagePath);
         }
-    
+
         $product->save();
 
         return redirect()->route('admin.products.index')->with('info', 'Producto creado exitósamente');
     }
 
-   
-    public function show(Product $product)
-    {
-        return view('admin.products.show', compact('products'));
-    }
     
     public function edit(Product $product)
     {
-    return view('admin.products.edit', compact('product'));
-    }
+        $statusLabels = [
+            Product::BORRADOR => 'Borrador',
+            Product::PUBLICADO => 'Publicado',
+        ];
 
+        $subcategories = Subcategory::all();
+        $products = Product::all();
+
+        return view('admin.products.edit', compact('product', 'subcategories', 'statusLabels'));
+    }
 
     public function update(Request $request, Product $product)
-{
-    $request->validate([
-        'name' => 'required',
-        'precio' => 'required',
-        'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-    ]);
+    {
+        $request->validate([
+            'sku',
+            'name' => 'required',
+            'description' => 'required',
+            'image_path' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'price' => 'required',
+            'status' => 'nullable',
+            'subcategory_id' => 'required'
+        ]);
 
-    if ($request->hasFile('image')) {
-        $imagePath = $request->file('image')->store('public/products_images');
-        $product->image = 'products_images/' . basename($imagePath);
+        if ($request->hasFile('image_path')) {
+            $imagePath = $request->file('image_path')->store('public/products_images');
+            $product->image_path = 'products_images/' . basename($imagePath);
+        }
+
+        $product->update($request->except('image_path'));
+
+        return redirect()->route('admin.products.index')->with('info', 'Producto actualizado exitosamente.');
     }
-
-    $product->update($request->except('image'));
-
-    return redirect()->route('admin.products.index')->with('info', 'Producto actualizado exitosamente.');
-}
 
     public function destroy(Product $product)
     {

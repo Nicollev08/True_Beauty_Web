@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar producto</h1>
+    <h1>Editar tip</h1>
 @stop
 
 @section('content')
@@ -27,7 +27,7 @@
                 <label for="precio" class="form-label">Descripción</label>
                 <input type="text" class="form-control" name="description" id="description" value="{{ $tip->description }}" placeholder="Descripción del tip" >
 
-                @error('precio')
+                @error('description')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>

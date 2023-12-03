@@ -1,24 +1,28 @@
 <?php
-use App\Http\Controllers\Agenda\EventoController;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\EventoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ShoppingCartController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\CommentController;
+use App\Livewire\Comments;
+use App\Livewire\ShoppingCart;
+use App\Livewire\CreateOrder;
+use App\Livewire\PaymentOrder;
+use App\Livewire\Services;
+use App\Livewire\Tips;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/', WelcomeController::class)->name('/');
 
-Route::get('/', function () {
-    return view('home.index');
-});
-
+// Route::get("/", function () {
+//     return view("welcome");
+// });
 
 Route::middleware([
     'auth:sanctum',
@@ -30,17 +34,34 @@ Route::middleware([
     })->name('dashboard');
 });
 
-include __DIR__.'/api.php';
+
+
+Route::get('search', SearchController::class)->name('search');
+
+Route::get('products/show/{product}', [ProductController::class, 'show'])->name('products.show');
+
+Route::get('categories/show/{category}', [CategoryController::class, 'show'])->name('categories.show');
+
+Route::get('shopping-cart', ShoppingCart::class)->name('shopping.cart');
 
 
 
-Route::get('/', function () {
-    return view('evento.index');
-})->middleware("auth");
 
-Auth::routes();
+Route::middleware(['auth'])->group(function(){
 
-Route::group(['middleware' => ['auth']], function () {
+    Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
+
+    Route::get('orders/create', CreateOrder::class)->name('orders.create');
+
+    Route::get('orders/{order}/payment', PaymentOrder::class)->name('orders.payment');
+
+    Route::get('orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+
+
+    Route::resource('comments', CommentController::class)->only('store','update', 'destroy')->names('comments');
+    Route::get('comments', Comments::class);
+
+    /////AGENDA
 
     Route::resource('/eventos', EventoController::class)->only(['index', 'store']);
 
@@ -51,17 +72,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/eventos/update/{evento}', [EventoController::class, 'update']);
 
     Route::post('/eventos/eliminar/{id}', [EventoController::class, 'destroy']);
+
 });
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('services', [Services::class, 'render'])->name('view-services');
 
+Route::get('tips', [Tips::class, 'render'])->name('view-tips');
 
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
-
+///LOGIN FACEBOOK Y GOOGLE
+Route::get('/auth/{driver}/redirect', [AuthController::class, 'redirect']);
+ 
+Route::get('/auth/{driver}/callback', [AuthController::class, 'callback']);

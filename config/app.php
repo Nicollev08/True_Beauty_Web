@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,6 +171,13 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+        
+
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
+        
     ])->toArray(),
 
     /*
@@ -186,6 +193,10 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'PDF ' =>  Barryvdh\DomPDF\ServiceProvider::class,
+        
     ])->toArray(),
 
 ];
