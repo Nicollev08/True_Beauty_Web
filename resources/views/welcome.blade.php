@@ -128,15 +128,15 @@
             <!-- SERVICES SECTION -->
             <section class="servicios" id="servicios">
 
-                <div class="servicecontent">
-                    <div class="row">
-                        <div class="section__title2">
-                            <h1>SERVICIOS</h1>
-                            <span></span>
-                        </div>
+
+                <div class="row">
+                    <div class="section__title2">
+                        <h1>SERVICIOS</h1>
+                        <span></span>
                     </div>
-                    @livewire('services')
                 </div>
+                @livewire('services')
+
             </section>
 
 

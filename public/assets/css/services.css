@@ -41,11 +41,24 @@
   --z_negative: -1;
 }
 
-
 * {
   box-sizing: border-box;
 }
 
+
+html {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--white-color);
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+
+    overflow-y: visible;
+    overflow-x: hidden;
+}
 .section__title {
   margin: 0 auto;
   text-align: center;
@@ -146,7 +159,7 @@
   padding: 0 20px;
   place-self: center;
   text-align: center;
-  --color: hsla(51, 100%, 49%, 0.263);
+  --color: hsla(193, 89%, 65%, 0.292);
 }
 
 
