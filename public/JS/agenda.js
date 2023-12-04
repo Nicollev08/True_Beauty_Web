@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'dayGridMonth', // 'dayGridMonth,timeGridWeek,listWeek', // si queres le colocas todo esto que hace referencia al mes, semana y hoy
+      right: 'dayGridMonth,timeGridWeek,listWeek',  // 'dayGridMonth,timeGridWeek,listWeek', // si queres le colocas todo esto que hace referencia al mes, semana y hoy
     },
 
     // events: baseURL + "/eventos/mostrar",
@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
         (respuesta) => {
 
           formulario.id.value          = respuesta.data.id;
-          formulario.title.value       = respuesta.data.title;
+          formulario.title.value          = respuesta.data.title;
+          formulario.service_id.value       = respuesta.data.service_id;
+          formulario.type.value       = respuesta.data.type;
           formulario.descripcion.value = respuesta.data.descripcion;
           formulario.start.value       = respuesta.data.start;
 

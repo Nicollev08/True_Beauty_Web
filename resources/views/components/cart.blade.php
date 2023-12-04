@@ -1,5 +1,5 @@
 
-@props(['size' => 35, 'color' => 'gray'])
+@props(['size' => 35, 'color' => 'white'])
 
 @php
     

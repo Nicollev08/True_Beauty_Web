@@ -16,8 +16,14 @@ class Service extends Model
         'image',
     ];
 
+    ///UNO A MUCHOS
+    public function eventos(){
+        return $this->hasMany(Evento::class);
+    }
+
     public function scopeSearch($query, $search)
     {
         return $query->where('name', 'LIKE', '%' . $search . '%');
     }
+
 }

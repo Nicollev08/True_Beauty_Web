@@ -45,11 +45,28 @@
                                 <label for="id">Id</label>
                             </div>
 
+                            
+                            <label for="">Servicio: </label>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="title" name="title"
-                                    placeholder="Escribe el titulo del evento">
-                                <label for="title">Titulo del evento</label>
+                                <select name="service_id" id="service_id">
+                                    <option value="">Seleccione un servicio</option>
+                                    @foreach ($services as $service)
+                                        <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
+
+
+                            <label for="">Tipo de agenda: </label>
+                            <div class="form-floating mb-3">
+                                <select name="type" id="type">
+                                    <option value="">Seleccione tipo</option>
+                                    @foreach ($statusLabels as $value => $label)
+                                        <option value="{{ $value }}">{{ $label }}</option>
+                                    @endforeach
+                                </select>
+                            </div>                            
+
 
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Descripción del evento" id="description"

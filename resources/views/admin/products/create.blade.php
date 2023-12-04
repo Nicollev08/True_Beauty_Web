@@ -70,6 +70,17 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="status">ESTADO</label>
+                    <select name="status" id="status">
+                        @foreach ($statusLabels as $value => $label)
+                            <option value="{{ $value }}" {{ $product->status == $value ? 'selected' : '' }}>
+                                {{ $label }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="mb-3">
                     <label class="form-label" for="image_path">Imagen</label>
                     <input class="form-control" type="file" id="image_path" name="image_path">
                 </div>

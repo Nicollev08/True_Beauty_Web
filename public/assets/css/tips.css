@@ -1,0 +1,130 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Gelasio&display=swap&family=Montserrat:wght@300;400;700;800&display=swap');
+
+
+/*---------------VARIABLES CSS-------------------*/
+:root {
+
+    /*---------------COLLORS -------------------*/
+    --rosa-color: #e4b2c6a9;
+    --cafe-color: #4f321f;
+    --amarillo-color: #dfd6a7;
+    --white-color: #ffffff;
+    --black-color: #151515;
+    --fuccia-color: rgb(219, 103, 149);
+
+    /*---------------FONT  AND TYPOGRAPHY-------------------*/
+    --font-cursive: 'Gelasio', cursive;
+    --body-font: 'Montserrat', sans-serif;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.813rem;
+
+    /*---------------MARGINS-------------------*/
+    --mb-05: 0.5rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+}
+
+/* TIPS */
+
+.tips {
+    margin-top: var(--mb-2-5);
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+}
+
+.contip {
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.tipcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.tipcontainer .tip {
+    flex: 0 0 calc(33.33% - 20px); /* Cambiado a 33.33% para mostrar 3 en una fila */
+    margin: 30px 0;
+    max-width: 500px;
+    height: 280px;
+    background: white;
+    padding: 5px 15px;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.tipcontainer .tip:hover {
+    height: 420px;
+}
+
+.tipcontainer .tip .imgBx {
+    position: relative;
+    width: 450px;
+    height: 170px;
+    top: -80px;
+    left: 10px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tipcontainer .tip .imgBx img {
+    width: 100%;
+    height: 180%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tipcontainer .tip .content {
+    position: relative;
+    margin-top: -140px;
+    padding: 0px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.tipcontainer .tip:hover .content {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 80px;
+    transition-delay: 0.3s;
+}
+
+
+.opbtn1 {
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--fuccia-color);
+    border: 1px solid var(--white-color);
+    padding: 1.2rem 3rem;
+    border-radius: 1rem;
+    font-size: 14px;
+    transition: all 0.2s;
+    text-align: center;
+    position: relative;
+
+  }
+  
+  .opbtn1:hover {
+    transform: scale(1.1);
+    color: black;
+    background-color: #fea9c5;
+    border: 1px solid var(--fuccia-color);
+  }

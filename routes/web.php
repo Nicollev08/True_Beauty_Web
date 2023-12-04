@@ -12,14 +12,15 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\TipsController;
 use App\Http\Controllers\UserController;
 
 use App\Livewire\Comments;
 use App\Livewire\ShoppingCart;
 use App\Livewire\CreateOrder;
 use App\Livewire\PaymentOrder;
-use App\Livewire\Services;
-use App\Livewire\Tips;
+
 
 Route::get('/', WelcomeController::class)->name('/');
 
@@ -50,7 +51,7 @@ Route::get('shopping-cart', ShoppingCart::class)->name('shopping.cart');
 
 
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function () {
 
     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
 
@@ -64,7 +65,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('user/order/pdf/{orderId}', [UserController::class, 'pdf'])->name('users.orders.pdf');
 
     //COMENTARIOS
-    Route::resource('comments', CommentController::class)->only('store','update', 'destroy')->names('comments');
+    Route::resource('comments', CommentController::class)->only('store', 'update', 'destroy')->names('comments');
     Route::get('comments', Comments::class);
 
     /////AGENDA
@@ -79,13 +80,16 @@ Route::middleware(['auth'])->group(function(){
 
     Route::post('/eventos/eliminar/{id}', [EventoController::class, 'destroy']);
 
+
+    ///SERVICIOS Y TIPS
+    Route::get('services', [ServicesController::class, 'index'])->name('view-services');
+
+    Route::get('tips', [TipsController::class, 'index'])->name('view-tips');
 });
 
-Route::get('services', [Services::class, 'render'])->name('view-services');
 
-Route::get('tips', [Tips::class, 'render'])->name('view-tips');
 
 ///LOGIN FACEBOOK Y GOOGLE
 Route::get('/auth/{driver}/redirect', [AuthController::class, 'redirect']);
- 
+
 Route::get('/auth/{driver}/callback', [AuthController::class, 'callback']);

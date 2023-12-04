@@ -9,25 +9,35 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Evento extends Model
 {
     use HasFactory;
-    
+
+    const ASESORIA = 1;
+    const CITA = 2;
+
     static $rules = [
-        'title'       => 'required',
+        'type'       => 'required',
         'descripcion' => 'required',
-        'start'       => 'required',
+        'start'       => 'required'
     ];
 
 
     protected $fillable = [
-        'title',
+        'service_id',
+        'type',
         'descripcion',
         'start',
-        'userId'
+        'user_id',
+        'title'
     ];
+
+    //UNO A MUCHOS INVERSA
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
 
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'userId', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
-
 }

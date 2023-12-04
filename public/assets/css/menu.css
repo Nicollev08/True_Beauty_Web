@@ -58,7 +58,7 @@
     color: white;
 }
 
-.header i {
+.header i.profile {
     color: white;
     font-size: 2rem; 
     margin-left: 80px; 
@@ -78,4 +78,68 @@
 }
 
 
+/* Agrega este código al final de tu archivo CSS */
 
+/* Estilos específicos para el icono de hamburguesa */
+.header .navbar .menu-icon {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* MEDIA QUERY */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem 5%;
+    }
+    .header .logo img{
+        height: 4rem;
+    }
+
+    .header .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: black;
+        display: none;
+        z-index: 1000;
+    }
+
+    .header .navbar.show {
+        display: flex;
+    }
+
+    .header .navbar .names {
+        margin-left: 20px;
+    }
+
+    .header .navbar .menu-icon {
+        display: block;
+    }
+
+    .header i {
+        display: none;
+        color: white;
+    }
+
+    .header .navbar a i.fa-cart-shopping {
+        margin-left: 0;
+        padding: 0 10px;
+    }
+}
+
+/* Mostrar el icono solo en dispositivos móviles */
+@media (max-width: 768px) {
+    .header .menu-icon {
+        display: inline-block; /* Muestra el icono solo en dispositivos móviles */
+    }
+    
+    .header i {
+        display: none;
+        color: white;
+        font-size: 2rem; 
+    }
+}

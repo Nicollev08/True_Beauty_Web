@@ -2,11 +2,14 @@
     <x-banner />
 @endif
 <header action="/index" class="header">
+    <script src="JS/menu.js"></script>
     @csrf
     <a href="/" class="logo">
         <img src="/IMG/logo.png" alt="">
 
     </a>
+
+    <i class="fa-solid fa-bars menu-icon hidden"></i>
 
     <nav class="navbar navbar-default">
 
@@ -21,7 +24,7 @@
             <div class="ml-3 relative">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <i class="fa-regular fa-circle-user cursor-pointer w-6 text-4xl"></i>
+                        <i class=" profile fa-regular fa-circle-user cursor-pointer w-6 text-4xl"></i>
                     </x-slot>
 
                     <x-slot name="content">
@@ -38,8 +41,6 @@
             </div>
 
         @endguest
-
-        {{-- <a href="#" title="carrito"><i class="fa-solid fa-cart-shopping" style="color: #fcfcfd;"></i></a> --}}
 
         <div class="hidden pl-10 md:block">
             @livewire('dropdown-cart')

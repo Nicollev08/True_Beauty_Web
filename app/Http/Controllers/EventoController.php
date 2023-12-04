@@ -3,31 +3,39 @@
 namespace App\Http\Controllers;
 
 use App\Models\Evento;
+use App\Models\Service;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class EventoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        return view('evento.index');
+        $statusLabels = [
+            Evento::ASESORIA => 'Asesoría',
+            Evento::CITA => 'Cita',
+        ];
+
+        $services = Service::all();
+        $eventos = Evento::all();
+        return view('evento.index', compact('eventos', 'services',  'statusLabels'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
         request()->validate(Evento::$rules);
+        $service = Service::find($request->service_id);
+
         Evento::create([
-            'title'       => $request->title,
+            'service_id'   => $request->service_id,
+            'type'       => $request->type,
             'descripcion' => $request->descripcion,
-            'start'       => $request->start,
-            'userId'      => Auth::user()->id
+            'start' => Carbon::createFromFormat('Y-m-d', $request->start)->toDateTimeString(),
+            'user_id'      => Auth::user()->id,
+            'title'        => $service->name,
         ]);
     }
 
@@ -39,13 +47,10 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
-        $evento = Evento::where('userId', Auth::user()->id)->get();
+        $evento = Evento::where('user_id', Auth::user()->id)->get();
         return response()->json($evento);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($id)
     {
         $evento = Evento::find($id);
@@ -56,29 +61,29 @@ class EventoController extends Controller
         return response()->json($evento, 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Evento $evento)
     {
-        request()->validate(Evento::$rules);
+        $request->validate(Evento::$rules);
+
+        $service = Service::find($request->service_id);
+
         $evento->update([
-            'title'       => $request->title,
-            'descripcion' => $request->descripcion,
-            'start'       => $request->start,
-            'userId'      => Auth::user()->id
+            'service_id'   => $request->service_id,
+            'type'         => $request->type,
+            'descripcion'  => $request->descripcion,
+            'start'        => $request->start,
+            'user_id'      => Auth::user()->id,
+            'title'        => $service->name,
         ]);
+
         return response()->json($evento);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy($id)
     {
         $evento = Evento::find($id)->delete();
 
         return response()->json($evento);
-
     }
 }
