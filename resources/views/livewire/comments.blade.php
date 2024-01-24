@@ -6,9 +6,10 @@
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <section class="">
-        <div class="testimonials__container">
-            @if ($comments->count())
+    <section class="text-center">
+
+        @if ($comments->count())
+            <div class="testimonials__container">
                 @foreach ($comments as $comment)
                     <div class="testimonials__card container grid">
                         <div class="testimonials__item flex">
@@ -50,16 +51,18 @@
 
                             </div>
                         </div>
-
+                            <p></p>
                     </div>
                 @endforeach
-            @else
-                <p class="text-center">No hay comentarios</p>
-            @endif
-        </div>
+            </div>
+        @else
+            <p class="text-center pt-10">No hay comentarios</p>
+
+        @endif
 
 
-        <div class="text-center">
+
+        <div class="text-center pt-10">
             <x-button wire:click="handleCommentButtonClick" class="text-center">
                 Nuevo comentario
             </x-button>

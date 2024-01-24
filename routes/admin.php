@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AgendaController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\HomeController;
@@ -57,6 +58,8 @@ Route::resource('services', ServiceController::class)->except('show')->names('ad
 Route::resource('products', ProductController:: class)->except('show')->names('admin.products');
 
 Route::resource('tips', TipController::class)->except('show')->names('admin.tips');
+
+Route::resource('agendas', AgendaController::class)->only('index')->names('admin.agendas');
 
 Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index');
 Route::get('orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');

@@ -28,7 +28,7 @@ class TipController extends Controller
     public function pdf()
     {
         $tips = Tip::all();
-        $pdf = PDF::loadView('admin.tips.pdf', compact('tips')); // Corregido: Cambiado de Pdf::loadView a PDF::loadView
+        $pdf = PDF::loadView('admin.tips.pdf', compact('tips'));
         return $pdf->stream();
     }
 

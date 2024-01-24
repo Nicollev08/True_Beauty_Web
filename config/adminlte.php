@@ -344,7 +344,7 @@ return [
         [
             'text' => 'Servicios',
             'route'  => 'admin.services.index',
-            'icon' => 'fas fa-fw fa-spray-can',
+            'icon' => 'fas fa-fw fa-bullhorn',
         ],
         [
             'text' => 'Productos',
@@ -375,6 +375,11 @@ return [
             'text' => 'Ciudades',
             'route'  => 'admin.cities.index',
             'icon' => 'fas fa-fw fa-city',
+        ],
+        [
+            'text' => 'Agendas',
+            'route'  => 'admin.agendas.index',
+            'icon' => 'fas fa-fw fa-calendar-check',
         ],
         // [
         //     'text' => 'change_password',

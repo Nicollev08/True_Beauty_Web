@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>True Beauty</title>
+    <title>TRUE BEAUTY</title>
 
     <link rel="shortcut icon" href="/IMG/logo.png" type="image/x-icon">
 

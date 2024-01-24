@@ -7,4 +7,20 @@
         @livewire('home.category-filter', ['category' => $category])
 
     </div>
+
+    <style>
+        html {
+            overflow-y: visible;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: var(--white-color);
+            font-size: var(--normal-font-size);
+            font-family: var(--body-font);
+
+            overflow-y: visible;
+            overflow-x: hidden;
+        }
+    </style>
 </x-app-layout>

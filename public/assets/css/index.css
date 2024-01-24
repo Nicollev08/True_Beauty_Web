@@ -65,7 +65,7 @@ body{
     font-size: var(--normal-font-size);
     font-family: var(--body-font);
    
-    overflow-y:hidden;
+    overflow-y:visible;
     overflow-x:hidden;
 }
 
@@ -241,7 +241,7 @@ body {
 /* ABOUT */
 .container{
     height: 350px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     
 }
@@ -249,13 +249,12 @@ body {
     background-color: var(--rosa-color);
 }
 .about__content{
-    padding: 2rem;
+    padding: 3rem;
 }
 .about__container {
-   
     display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    gap: 1em;
+    grid-template-columns: 100px 1fr 100px;
+    
     align-items: center;
 }
 
@@ -264,7 +263,6 @@ body {
     grid-template-columns: 1fr max-content;
     justify-content: space-between;
     align-items: center;
-    gap: 2em;
     grid-column: 2/3;
     grid-row: 1/2;
     opacity: 0;
@@ -278,15 +276,20 @@ body {
 }
 
 .about__img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: 50% 30%;
+    object-position: 60% 30%; /* Ajusta esta línea */
+}
+.about__review{
+    padding-top: 8px;
 }
 
 .about__texts {
     max-width: 700px;
+    font-size: 18px;
+    padding: 15px;
 }
 
 .about__course {
@@ -297,7 +300,7 @@ body {
 }
 
 .about__arrow {
-    width: 90%;
+    width: 50%;
     cursor: pointer;
 }
 

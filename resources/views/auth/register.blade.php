@@ -87,4 +87,17 @@
             </div>
         </form>
     </x-authentication-card>
+
+    <style>
+        html {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        body {
+
+            overflow-y: visible;
+            overflow-x: hidden;
+        }
+    </style>
 </x-guest-layout>

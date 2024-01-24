@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             'Cabello',
-            'Pestañas',
+            'Maquillaje',
             'Cuerpo',
             'Uñas'
         ];

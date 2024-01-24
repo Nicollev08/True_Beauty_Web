@@ -29,14 +29,18 @@ class SubcategorySeeder extends Seeder
                 'name' => "Suavidad"
             ],
 
-            //PEPSTAÑAS
+            //MAQUILLAJE
             [
                 'category_id' => 2,
-                'name' => "Punto a punto"
+                'name' => "Pestañas"
             ],
             [
                 'category_id' => 2,
-                'name' => "Enteras"
+                'name' => "Labios"
+            ],
+            [
+                'category_id' => 2,
+                'name' => "Cara"
             ],
             //CUERPO
             [
@@ -50,7 +54,7 @@ class SubcategorySeeder extends Seeder
             //UÑAS
             [
                 'category_id' => 4,
-                'name' => "Postizas"
+                'name' => "Serum"
             ],
             [
                 'category_id' => 4,

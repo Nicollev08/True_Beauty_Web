@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:admin.departments.index')->only('index');
+        $this->middleware('can:admin.departments.create')->only('create', 'store');
+        $this->middleware('can:admin.departments.edit')->only('edit', 'update');
+        $this->middleware('can:admin.departments.destroy')->only('destroy');
+    }
     public function index(){
         $departments = Department::all();
         return view('admin.departments.index', compact('departments'));
@@ -29,14 +36,13 @@ class DepartmentController extends Controller
 
         $department->save();
 
-        return redirect()->route('admin.departments.index')->with('info', 'Subcategoría creada exitósamente');
+        return redirect()->route('admin.departments.index')->with('info', 'Departamento creado exitósamente');
     }
 
 
     public function edit(Department $department)
     {
-        $departments = Department::all();
-        return view('admin.departments.edit', compact('departments'));
+        return view('admin.departments.edit', compact('department'));
     }
 
     public function update(Request $request, Department $department)
@@ -47,13 +53,13 @@ class DepartmentController extends Controller
 
         $department->update($request->all());
 
-        return redirect()->route('admin.departments.edit', $department)->with('info', 'Subcategoría actualizada exitosamente.');
+        return redirect()->route('admin.departments.index', $department)->with('info', 'Departamento actualizado exitosamente.');
     }
 
 
     public function destroy(Department $department)
     {
         $department->delete();
-        return redirect()->route('admin.departments.index')->with('info', 'Subcategoria eliminada exitosamente.');
+        return redirect()->route('admin.departments.index')->with('info', 'Departamento eliminado exitosamente.');
     }
 }

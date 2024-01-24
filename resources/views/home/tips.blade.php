@@ -1,7 +1,15 @@
 <x-app-layout>
 
     <link rel="stylesheet" href="{{ url('assets/css/tips.css') }}">
+    
     <div class=" py-40 ">
+        <div class="row">
+            <div class="section__title2">
+                <h1>TIPS DE BELLEZA</h1>
+                <span></span>
+            </div>
+        </div>
+        <br>
         @if (isset($tips) && count($tips) > 0)
             <div class="tipcontainer">
                 @foreach ($tips as $index => $tip)

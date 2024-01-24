@@ -12,6 +12,13 @@ use App\Exports\SubcategoriesExport; // Agrega la importación de la clase Subca
 
 class SubcategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:admin.subcategories.index')->only('index');
+        $this->middleware('can:admin.subcategories.create')->only('create', 'store');
+        $this->middleware('can:admin.subcategories.edit')->only('edit', 'update');
+        $this->middleware('can:admin.subcategories.destroy')->only('destroy');
+    }
     public function index()
     {
         $subcategories = Subcategory::all();
@@ -58,11 +65,10 @@ class SubcategoryController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'categories' => 'required|array'
+            'category_id' => 'required'
         ]);
 
-        $subcategory->update($request->only('name'));
-        $subcategory->categories()->sync($request->categories);
+        $subcategory->update($request->all());
 
         return redirect()->route('admin.subcategories.edit', $subcategory)->with('info', 'Subcategoría actualizada exitosamente.');
     }

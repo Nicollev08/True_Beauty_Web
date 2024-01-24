@@ -35,8 +35,6 @@ class ServiceController extends Controller
         }
 
         $pdf = PDF::loadView('admin.services.pdf', compact('services'));
-        $pdf->getDomPDF()->set_option("isHtml5ParserEnabled", true);
-        $pdf->getDomPDF()->set_option("isPhpEnabled", true);
         
         
         return $pdf->stream();

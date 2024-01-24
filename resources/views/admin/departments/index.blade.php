@@ -46,10 +46,10 @@
                                 <td>{{ $department->name }}</td>
                                 <td width="10px">
                                     <a class="btn btn-primary"
-                                        href="{{ route('admin.categories.edit', $department) }}">Editar</a>
+                                        href="{{ route('admin.departments.edit', $department) }}">Editar</a>
                                 </td>
                                 <td width="10px">
-                                    <form action="{{ route('admin.categories.destroy', $department) }}" method="POST">
+                                    <form action="{{ route('admin.departments.destroy', $department) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
 

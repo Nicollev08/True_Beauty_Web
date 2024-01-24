@@ -51,18 +51,34 @@
                             <span></span>
                         </div>
                     </div>
+                
                     <div class="about__container container">
+                       
                         <img src="/IMG/leftarrow.svg" class="about__arrow" id="before">
-
+                       
                         <section class="about__body about__body--show" data-id="1">
+                            <audio controls>
+                                <source src="{{ asset('AUDIO/Laura.m4a') }}" type="audio/mp4">
+                                Tu navegador no soporta el elemento de audio.
+                            </audio>
+                            <div></div>
+                            
                             <div class="about__texts">
-                                <h2 class="subtitle">Mi nombre es Laura Vidal, <span class="about__course">estudiante de
+                                
+                                
+                                <h2 class="subtitle">Mi nombre es Laura Vidal, <span class="about__course">Estudiante de
                                         ADSO.</span></h2>
-                                <p class="about__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
-                                    est
-                                    esse, asperiores eaque totam nulla repudiandae quasi, deserunt culpa exercitationem
-                                    blanditiis laborum veniam laboriosam saepe reiciendis dolorem. Cum, ratione
-                                    voluptatum!
+                                <p class="about__review">
+
+                                    <b>MISIÓN</b>
+
+                                    En True Beauty, nos dedicamos a ser el puente perfecto entre la belleza que sueñas y
+                                    la realidad que mereces. Nuestra misión es simplificar tu vida, ofreciéndote un
+                                    sistema de información diseñado para cubrir todas tus necesidades de belleza.
+                                    Facilitamos la agenda de citas para los servicios de cualquier centro de belleza y
+                                    la promoción de su catálogo de 
+                                    productos, todo ello pensado para los amantes del cuidado facial y la estética
+                                    personal.
                                 </p>
                             </div>
 
@@ -72,15 +88,25 @@
                         </section>
 
                         <section class="about__body" data-id="2">
+                            <audio controls>
+                                <source src="{{ asset('AUDIO/Nicole.m4a') }}" type="audio/mp4">
+                                Tu navegador no soporta el elemento de audio.
+                            </audio>
+                            <div></div>
                             <div class="about__texts">
-                                <h2 class="subtitle">Mi nombre es Nicole García, <span class="about__course">estudiante
+                                <h2 class="subtitle">Mi nombre es Nicole García, <span class="about__course">Estudiante
                                         de
                                         ADSO.</span></h2>
-                                <p class="about__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
-                                    est
-                                    esse, asperiores eaque laborum veniam laboriosam saepe reiciendis dolorem. Cum,
-                                    ratione
-                                    voluptatum!</p>
+                                <p class="about__review">
+
+                                    <b>VISIÓN</b>
+                                    Para el año 2024 los usuarios podrán hacer uso de nuestro sistema de información
+                                    compuesto por un aplicativo web y móvil, que será distinguido por facilitar a
+                                    cualquier centro de belleza la promoción de sus productos y
+                                    servicios, Nos esforzamos por ser pioneros en marketing digital, creando un
+                                    ecosistema donde la belleza y la innovación se fusionan para ofrecer experiencias
+                                    inolvidables.
+                                </p>
                             </div>
 
                             <figure class="about__picture">
@@ -89,14 +115,20 @@
                         </section>
 
                         <section class="about__body" data-id="3">
+                            <audio controls>
+                                <source src="{{ asset('AUDIO/Alejo.m4a') }}" type="audio/mp4">
+                                Tu navegador no soporta el elemento de audio.
+                            </audio>
+                            <div></div>
                             <div class="about__texts">
                                 <h2 class="subtitle">Mi nombre es Alejandro Suárez, <span
-                                        class="about__course">estudiante
+                                        class="about__course">Estudiante
                                         de
                                         ADSO.</span></h2>
-                                <p class="about__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
-                                    est
-                                    esse, niam laboriosam saepe reiciendis dolorem. Cum, ratione voluptatum!</p>
+                                <p class="about__review">
+                                    Gracias a las avanzadas tecnologías de hoy en día, hemos logrado dar vida a este
+                                    emocionante proyecto. La innovación digital ha sido nuestra aliada, permitiéndonos
+                                    materializar ideas y crear soluciones únicas. </p>
                             </div>
 
                             <figure class="about__picture">
@@ -105,14 +137,20 @@
                         </section>
 
                         <section class="about__body" data-id="4">
+                            <audio controls>
+                                <source src="{{ asset('AUDIO/Mauricio.m4a') }}" type="audio/mp4">
+                                Tu navegador no soporta el elemento de audio.
+                            </audio>
+                            <div></div>
                             <div class="about__texts">
                                 <h2 class="subtitle">Mi nombre es Mauricio Campos, <span
-                                        class="about__course">estudiante
+                                        class="about__course">Estudiante
                                         de
                                         ADSO.</span></h2>
-                                <p class="about__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
-                                    est
-                                    esse, niam laboriosam saepe reiciendis dolorem. Cum, ratione voluptatum!</p>
+                                <p class="about__review">Esperamos sinceramente que este proyecto sea de su agrado.
+                                    Hemos dedicado tiempo y esfuerzo para crear una experiencia que refleje nuestro
+                                    compromiso con la excelencia. Agradecemos su atención y confianza en nuestro
+                                    trabajo.</p>
                             </div>
 
                             <figure class="about__picture">

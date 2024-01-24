@@ -54,7 +54,7 @@ class ServiceSeeder extends Seeder
                 'name' => "PEINADOS",
                 'description' => "¡Descubre tu estilo único con nuestros increíbles peinados para dama! Desde looks elegantes hasta tendencias vanguardistas, te ayudaremos a expresar tu belleza con creatividad y sofisticación. ¡Haz una declaración de moda con cada cabello! 💇‍♀️✨",
                 'duration' => "1hr",
-                'image' => $this->storeImage('rubor.jpg', 'IMG'),
+                'image' => $this->storeImage('tip2.jpg', 'IMG'),
             ],
             [
                 'name' => "KERATINAS",

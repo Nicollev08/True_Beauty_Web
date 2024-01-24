@@ -24,7 +24,7 @@
 
                 </div>
 
-                <button class="btn btn-blue">Actualizar</button>
+                <button class="btn btn-primary">Actualizar</button>
             </form>
 
 
@@ -32,5 +32,4 @@
 
     </div>
 
-    @livewire('admin.subcategories.subcategory-admin', ['category' => $category])
 @stop
